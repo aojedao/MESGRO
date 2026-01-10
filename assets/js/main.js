@@ -9,44 +9,12 @@ class MESGROApp {
     }
 
     init() {
-        this.setupLanguageSwitch();
         this.setupMobileMenu();
         this.setupThemeToggle();
         this.setupSmoothScrolling();
         this.setupScrollToTop();
         this.setupLazyLoading();
         this.setupAnimations();
-    }
-
-    /**
-     * Language switching functionality
-     */
-    setupLanguageSwitch() {
-        const languageToggle = document.querySelector('.language-toggle');
-        
-        if (!languageToggle) return;
-
-        languageToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Get current page URL
-            const currentPath = window.location.pathname;
-            const currentLang = currentPath.includes('/en/') ? 'en' : 'es';
-            
-            let newPath;
-            
-            // Toggle between English and Spanish
-            if (currentLang === 'en') {
-                // Remove /en/ from path
-                newPath = currentPath.replace(/^\/en/, '') || '/';
-            } else {
-                // Add /en/ to path
-                newPath = '/en' + (currentPath === '/' ? '' : currentPath);
-            }
-            
-            // Navigate to new language version
-            window.location.href = newPath;
-        });
     }
 
     /**

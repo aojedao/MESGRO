@@ -2,7 +2,7 @@ en:
   site:
     title: "MESGRO - Robotics & Mechatronics Portfolio"
     description: "An open-source template for showcasing robotics and mechatronics projects with 3D models, schematics, and code"
-    author_name: "Your Name"
+    author_name: "Tu Nombre"
   nav:
     home: "Home"
     projects: "Projects"

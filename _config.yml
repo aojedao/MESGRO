@@ -9,7 +9,7 @@ email: "your.email@example.com"
 
 # Language settings
 lang: "es"
-languages: ["en", "es"]
+languages: ["es"]
 default_lang: "es"
 navigation:
   - title: "Home"
@@ -40,9 +40,6 @@ collections:
     output: true
     permalink: /:collection/:name/
 
-# Language-based collections
-collections_dir: _data
-
 # Defaults
 defaults:
   - scope:
@@ -51,8 +48,6 @@ defaults:
     values:
       layout: "project"
       lang: "es"
-    values:
-      layout: "project"
   - scope:
       path: ""
       type: "posts"
