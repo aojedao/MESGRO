@@ -384,18 +384,6 @@ class LanguageSwitcher {
     init() {
         this.applyLanguage(this.currentLang);
         this.setupToggle();
-        this.setupDelegatedToggle();
-    }
-
-    setupDelegatedToggle() {
-        // Use event delegation on document to handle toggle clicks
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('language-toggle')) {
-                e.preventDefault();
-                e.stopPropagation();
-                this.switchLanguage();
-            }
-        });
     }
 
     setupToggle() {
@@ -405,7 +393,14 @@ class LanguageSwitcher {
         // Update toggle text
         this.updateToggleText();
 
-        // Make it clickable
+        // Add click handler - bind 'this' explicitly
+        const handler = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.switchLanguage();
+        };
+        
+        toggle.addEventListener('click', handler);
         toggle.style.cursor = 'pointer';
     }
 
@@ -429,32 +424,19 @@ class LanguageSwitcher {
     applyLanguage(lang) {
         // Update all data-i18n elements
         const elements = document.querySelectorAll('[data-i18n]');
-        let missingKeys = [];
         
         elements.forEach(element => {
             const key = element.getAttribute('data-i18n');
-            const translation = this.translations[lang][key];
+            const translation = this.translations[lang] && this.translations[lang][key];
             
             if (translation) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = translation;
                 } else {
-                    // Only update if element has content or is empty
                     element.textContent = translation;
-                }
-            } else if (!translation && key) {
-                // Track missing keys for debugging
-                if (!this.translations[lang]) {
-                    console.error(`Language '${lang}' not found in translations`);
-                } else {
-                    missingKeys.push(key);
                 }
             }
         });
-        
-        if (missingKeys.length > 0) {
-            console.warn(`Missing translations for language '${lang}':`, missingKeys);
-        }
 
         // Store current language in HTML element
         document.documentElement.setAttribute('lang', lang);
@@ -483,6 +465,12 @@ class LanguageSwitcher {
 }
 
 // Initialize on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
+function initLanguageSwitcher() {
     window.languageSwitcher = new LanguageSwitcher();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+} else {
+    initLanguageSwitcher();
+}
