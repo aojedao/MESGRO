@@ -355,7 +355,7 @@ gallery:
     description: "6-DOF Robotic arm with vision system"
 ---
 
-## Project Overview
+## <span data-i18n="project.overview">Project Overview</span>
 
 <span data-i18n="project.6dof_overview">This project presents the design and implementation of a sophisticated 6-degree-of-freedom robotic arm integrated with a computer vision system for autonomous object manipulation. The system combines advanced inverse kinematics algorithms, real-time object detection using YOLO, and precise servo control to achieve accurate pick-and-place operations.</span>
 
@@ -406,35 +406,35 @@ gallery:
 - **NumPy**: Mathematical computations for kinematics
 - **Arduino Firmware**: Low-level servo control and safety systems
 
-## Inverse Kinematics Solution
+## <span data-i18n="project.overview">Inverse Kinematics Solution</span>
 
-The system uses a hybrid approach combining analytical and numerical methods:
+<span data-i18n="project.overview">The system uses a hybrid approach combining analytical and numerical methods:</span>
 
-### Analytical Solution
-For the first three joints (positioning the wrist):
+### <span data-i18n="project.overview">Analytical Solution</span>
+<span data-i18n="project.overview">For the first three joints (positioning the wrist):</span>
 1. **Base Rotation (θ₁)**: `θ₁ = atan2(y, x)`
 2. **Shoulder/Elbow (θ₂, θ₃)**: Solved using geometric relationships
 3. **Wrist Orientation (θ₄, θ₅, θ₆)**: Decoupled from position
 
-### Numerical Refinement
-- **Jacobian-based optimization** for improved accuracy
+### <span data-i18n="project.overview">Numerical Refinement</span>
+- **<span data-i18n="project.overview">Jacobian-based optimization for improved accuracy</span>**
 - **Joint limit enforcement** throughout the solution process
 - **Singularity avoidance** using damped least squares
 
-## Computer Vision Pipeline
+## <span data-i18n="project.overview">Computer Vision Pipeline</span>
 
-### 1. Image Acquisition
+### <span data-i18n="project.overview">1. Image Acquisition</span>
 - **Camera Calibration**: Corrects for lens distortion and determines intrinsic parameters
 - **Frame Capture**: 30fps continuous capture with automatic exposure control
 - **Image Preprocessing**: Noise reduction and contrast enhancement
 
-### 2. Object Detection
-- **YOLO Model**: Pre-trained on COCO dataset with custom fine-tuning
+### <span data-i18n="project.overview">2. Object Detection</span>
+- **<span data-i18n="project.overview">YOLO Model: Pre-trained on COCO dataset</span>** with custom fine-tuning
 - **Confidence Filtering**: Only detections above 50% confidence are processed
 - **Non-Maximum Suppression**: Eliminates duplicate detections
 
-### 3. 3D Position Estimation
-- **Depth Estimation**: Uses object size and known camera parameters
+### <span data-i18n="project.overview">3. 3D Position Estimation</span>
+- **<span data-i18n="project.overview">Depth Estimation: Uses object size</span>** and known camera parameters
 - **Coordinate Transformation**: Converts from camera to robot base coordinates
 - **Position Validation**: Checks if objects are within reachable workspace
 
@@ -456,15 +456,15 @@ For the first three joints (positioning the wrist):
 </div>
 </details>
 
-## Control Strategy
+## <span data-i18n="project.overview">Control Strategy</span>
 
-### Motion Planning
+### <span data-i18n="project.overview">Motion Planning</span>
 1. **Trajectory Generation**: Smooth paths using cubic spline interpolation
 2. **Velocity Profiling**: Trapezoidal velocity profiles for smooth motion
 3. **Acceleration Limits**: Respects mechanical constraints and stability
 
-### Safety Systems
-- **Joint Limit Monitoring**: Software and hardware joint limit switches
+### <span data-i18n="project.overview">Safety Systems</span>
+- **<span data-i18n="project.overview">Joint Limit Monitoring: Software and hardware</span>** joint limit switches
 - **Emergency Stop**: Immediate halt capability via hardware interrupt
 - **Collision Detection**: Basic collision avoidance using workspace boundaries
 - **Force Limiting**: Gripper force monitoring to prevent object damage

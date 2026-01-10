@@ -768,7 +768,7 @@ gallery:
     description: "Real-time sensor data visualization - Animated demonstration of live monitoring dashboard"
 ---
 
-## Project Overview
+## <span data-i18n="project.overview">Project Overview</span>
 
 <span data-i18n="project.iot_overview">This IoT Environmental Monitoring Station is a comprehensive system designed to collect, process, and visualize environmental data for agricultural, research, and monitoring applications. The system combines multiple sensors, wireless communication, solar power, and cloud-based data processing to provide real-time insights into environmental conditions.</span>
 
@@ -850,22 +850,22 @@ gallery:
 3. **<span data-i18n="project.calibration">Calibration: Automatic drift compensation and calibration</span>**
 4. **Aggregation**: Computes moving averages and trends
 
-### Advanced Analytics
-- **Anomaly Detection**: Machine learning-based outlier detection
+### <span data-i18n="project.overview">Advanced Analytics</span>
+- **<span data-i18n="project.overview">Anomaly Detection: Machine learning-based</span>** outlier detection
 - **Predictive Modeling**: Weather and crop condition forecasting
 - **Correlation Analysis**: Identifies relationships between variables
 - **Statistical Reporting**: Automated daily/weekly/monthly reports
 
-## Dashboard Features
+## <span data-i18n="project.overview">Dashboard Features</span>
 
-### Real-Time Visualization
+### <span data-i18n="project.overview">Real-Time Visualization</span>
 - **Live Gauges**: Current readings with color-coded status
 - **Time Series Charts**: Historical data with zoom and pan
 - **Weather Maps**: Geographic visualization of sensor network
 - **Mobile Responsive**: Optimized for phones and tablets
 
-### Data Export
-- **CSV Downloads**: Raw data export for analysis
+### <span data-i18n="project.overview">Data Export</span>
+- **<span data-i18n="project.overview">CSV Downloads: Raw data export</span>** for analysis
 - **API Access**: RESTful API for third-party integration
 - **Report Generation**: Automated PDF reports
 - **Database Backup**: Scheduled data backups
@@ -894,9 +894,9 @@ gallery:
 
 # Environmental Data Analysis & Visualization
 
-## Real-time Sensor Data Plots
+## <span data-i18n="project.overview">Real-time Sensor Data Plots</span>
 
-### Multi-parameter Time Series Analysis
+### <span data-i18n="project.overview">Multi-parameter Time Series Analysis</span>
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -954,7 +954,7 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 
-### Sensor Correlation Analysis
+### <span data-i18n="project.overview">Sensor Correlation Analysis</span>
 ```python
 # Correlation matrix and scatter plots
 data = pd.DataFrame({
@@ -1012,7 +1012,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-### Power Management Analysis
+### <span data-i18n="project.overview">Power Management Analysis</span>
 ```python
 # Battery and solar charging analysis
 hours = np.arange(0, 24, 0.5)
@@ -1068,7 +1068,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-### Data Quality & System Health Monitoring
+### <span data-i18n="project.overview">Data Quality & System Health Monitoring</span>
 ```python
 # System performance metrics
 days = range(1, 31)  # 30 days of operation
@@ -1141,21 +1141,21 @@ plt.show()
 - <span data-i18n="project.battery_life">Battery Life: 96 hours without solar charging</span>
 - <span data-i18n="project.weather_resistance">Weather Resistance: Survived -20°C to +45°C conditions</span>
 
-## Applications
+## <span data-i18n="project.applications">Applications</span>
 
-### Agriculture
+### <span data-i18n="project.overview">Agriculture</span>
 - **Irrigation Control**: Automated watering based on soil moisture
 - **Crop Monitoring**: Growth condition optimization
 - **Pest Management**: Environmental condition correlation
 - **Yield Prediction**: Data-driven harvest planning
 
-### Research
+### <span data-i18n="project.overview">Research</span>
 - **Climate Studies**: Long-term environmental data collection
 - **Ecosystem Monitoring**: Habitat condition assessment
 - **Weather Stations**: Meteorological data networks
 - **Urban Planning**: Microclimate analysis
 
-### Commercial
+### <span data-i18n="project.overview">Commercial</span>
 - **Greenhouse Automation**: Optimal growing condition maintenance
 - **Solar Farm Monitoring**: Weather impact on energy production
 - **Construction Sites**: Environmental compliance monitoring
@@ -1167,7 +1167,7 @@ plt.show()
 - **Edge AI Processing**: On-device machine learning
 - **Modular Design**: Plug-and-play sensor modules
 
-### Software Features
+### <span data-i18n="project.overview">Software Features</span>
 - **Machine Learning**: Predictive analytics and pattern recognition
 - **Voice Integration**: Alexa/Google Assistant compatibility
 - **Blockchain**: Secure data provenance and sharing
@@ -1179,7 +1179,7 @@ plt.show()
 3. **Sensor Placement**: Wind affects temperature readings significantly
 4. **PCB Design**: Ground planes essential for noise reduction
 
-### Software Development
+### <span data-i18n="project.overview">Software Development</span>
 1. **Error Handling**: Network failures are common in remote locations
 2. **Data Validation**: Sensor drift detection prevents bad data
 3. **Security**: IoT devices are attractive targets for attacks

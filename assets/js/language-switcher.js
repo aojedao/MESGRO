@@ -384,6 +384,18 @@ class LanguageSwitcher {
     init() {
         this.applyLanguage(this.currentLang);
         this.setupToggle();
+        this.setupDelegatedToggle();
+    }
+
+    setupDelegatedToggle() {
+        // Use event delegation on document to handle toggle clicks
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('language-toggle')) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.switchLanguage();
+            }
+        });
     }
 
     setupToggle() {
@@ -392,13 +404,6 @@ class LanguageSwitcher {
 
         // Update toggle text
         this.updateToggleText();
-
-        // Add click handler
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            this.switchLanguage();
-        });
 
         // Make it clickable
         toggle.style.cursor = 'pointer';
