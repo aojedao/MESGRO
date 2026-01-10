@@ -8,15 +8,15 @@ layout: default
       <div class="hero-info-wrapper">
         <div class="hero-text">
            <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
-           <p class="hero-title">Robotics & Mechatronics</p>
+           <p class="hero-title">{% include translate.html key="hero.subtitle" %}</p>
         </div>
         
         <div class="hero-actions">
           <a href="{{ '/about/' | relative_url }}" class="btn-secondary">
-            About
+            {% include translate.html key="hero.about_btn" %}
           </a>
            <a href="mailto:{{ site.email }}" class="btn-secondary">
-            Contact
+            {% include translate.html key="hero.contact_btn" %}
           </a>
         </div>
       </div>
@@ -27,8 +27,8 @@ layout: default
 <div class="projects-showcase">
   <div class="container">
     <div class="section-header">
-      <h2>Portfolio</h2>
-      <p class="section-subtitle">A curated collection of my research and design</p>
+      <h2>{% include translate.html key="portfolio.title" %}</h2>
+      <p class="section-subtitle">{% include translate.html key="portfolio.subtitle" %}</p>
     </div>
     
     <div class="projects-grid-featured">
@@ -107,7 +107,7 @@ layout: default
     <div class="showcase-actions">
       <a href="{{ '/projects/' | relative_url }}" class="btn-primary-large">
         <i class="fas fa-th"></i>
-        View All Projects
+        Ver Todos los Proyectos
       </a>
     </div>
   </div>
@@ -116,10 +116,10 @@ layout: default
 <div class="skills-section">
   <div class="container">
     <div class="skills-content">
-      <h2>Technical Expertise</h2>
+      <h2>Experiencia Técnica</h2>
       <div class="skills-grid">
         <div class="skill-category">
-          <h3><i class="fas fa-robot"></i> Robotics</h3>
+          <h3><i class="fas fa-robot"></i> Robótica</h3>
           <div class="skill-tags">
             <span class="skill-tag">ROS</span>
             <span class="skill-tag">Kinematics</span>
@@ -128,7 +128,7 @@ layout: default
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-microchip"></i> Electronics</h3>
+          <h3><i class="fas fa-microchip"></i> Electrónica</h3>
           <div class="skill-tags">
             <span class="skill-tag">Arduino</span>
             <span class="skill-tag">ESP32</span>
@@ -137,7 +137,7 @@ layout: default
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Programming</h3>
+          <h3><i class="fas fa-code"></i> Programación</h3>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
             <span class="skill-tag">C/C++</span>
@@ -146,7 +146,7 @@ layout: default
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-cube"></i> CAD/Design</h3>
+          <h3><i class="fas fa-cube"></i> CAD/Diseño</h3>
           <div class="skill-tags">
             <span class="skill-tag">SolidWorks</span>
             <span class="skill-tag">Fusion 360</span>

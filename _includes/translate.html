@@ -1,0 +1,7 @@
+{% assign lang = site.lang | default: "es" %}
+{% assign keys = include.key | split: "." %}
+{% assign translation = site.data.translations[lang] %}
+{% for key in keys %}
+  {% assign translation = translation[key] %}
+{% endfor %}
+{{ translation }}

@@ -1,26 +1,26 @@
 ---
 layout: project
-title: "Autonomous Line Following Robot"
-description: "A sophisticated line-following robot built with Arduino Uno, featuring PID control, obstacle detection, and wireless monitoring capabilities."
+title: "Robot Seguidor de Línea Autónomo"
+description: "Un sofisticado robot seguidor de línea construido con Arduino Uno, con control PID, detección de obstáculos y capacidades de monitoreo inalámbrico."
 date: 2024-10-15
-categories: [Robotics, Arduino, Mechatronics]
+categories: [Robótica, Arduino, Mecatrónica]
 featured_image: "/assets/images/projects/line-robot/featured.jpg"
 github_url: "https://github.com/aojedao/line-following-robot"
 demo_url: "#"
 
-# 3D Models - Support for STL, OBJ, GLTF, GLB formats
+# Modelos 3D - Soporte para formatos STL, OBJ, GLTF, GLB
 models:
   - file: "/assets/models/line-robot/chassis.gltf"
-    description: "3D printed robot chassis with integrated sensor mounts"
+    description: "Chasis de robot impreso en 3D con soportes de sensores integrados"
   - file: "/assets/models/line-robot/wheel-assembly.gltf"
-    description: "Custom wheel assembly with encoder integration"
+    description: "Ensamblaje de rueda personalizado con integración de codificador"
 
-# Circuit Schematics - PNG, JPG, SVG, PDF formats
+# Esquemas de Circuito - Formatos PNG, JPG, SVG, PDF
 schematics:
   - file: "/assets/schematics/line-robot/main-circuit.svg"
-    description: "Main control circuit with Arduino Uno and motor driver"
+    description: "Circuito de control principal con Arduino Uno y controlador de motor"
 
-# Code Files with syntax highlighting
+# Archivos de código con resaltado de sintaxis
 code_files:
   - name: "Main Control"
     file: "main.ino"

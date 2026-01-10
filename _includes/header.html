@@ -13,7 +13,7 @@
                     <li class="nav-item">
                         <a href="{{ nav_item.url | relative_url }}"
                             class="nav-link {% if page.url == nav_item.url %}active{% endif %}">
-                            {{ nav_item.title }}
+                            {% if nav_item.title == "Home" %}{% include translate.html key="nav.home" %}{% elsif nav_item.title == "Projects" %}{% include translate.html key="nav.projects" %}{% elsif nav_item.title == "About" %}{% include translate.html key="nav.about" %}{% else %}{{ nav_item.title }}{% endif %}
                         </a>
                     </li>
                     {% endfor %}
@@ -21,6 +21,10 @@
             </nav>
 
             <div class="header-actions">
+                <a href="https://github.com/aojedao/MESGRO/tree/main" class="language-toggle" title="{% include translate.html key='language.switch_to_english' %}">
+                    EN
+                </a>
+                
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>

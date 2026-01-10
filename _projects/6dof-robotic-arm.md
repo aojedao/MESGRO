@@ -1,9 +1,9 @@
 ---
 layout: project
-title: "6-DOF Robotic Arm with Vision System"
-description: "An advanced 6-degree-of-freedom robotic arm with computer vision capabilities for object detection, picking, and precise placement tasks."
+title: "Brazo Robótico de 6-DOF con Sistema de Visión"
+description: "Un brazo robótico avanzado de seis grados de libertad con capacidades de visión por computadora para detección de objetos, recolección y tareas de colocación precisa."
 date: 2024-09-20
-categories: [Robotics, Computer Vision, Machine Learning, 3D Printing]
+categories: [Robótica, Visión por Computadora, Aprendizaje Automático, Impresión 3D]
 featured_image: "/assets/images/projects/robotic-arm/featured.jpg"
 github_url: "https://github.com/aojedao/6dof-robotic-arm"
 demo_url: "#"
@@ -11,17 +11,17 @@ interactive_plot: true
 
 models:
   - file: "/assets/models/robotic-arm/base.gltf"
-    description: "Robotic arm base with servo mounting points"
+    description: "Base del brazo robótico con puntos de montaje para servos"
   - file: "/assets/models/robotic-arm/upper-arm.gltf"
-    description: "Upper arm segment with gear reduction"
+    description: "Segmento del brazo superior con reducción de engranajes"
 
 schematics:
   - file: "/assets/schematics/robotic-arm/control-system.svg"
-    description: "Main control system with microcontroller and servo drivers"
+    description: "Sistema de control principal con microcontrolador y controladores de servo"
   - file: "/assets/schematics/robotic-arm/power-distribution.svg"
-    description: "Power distribution for servos and control electronics"
+    description: "Distribución de energía para servos y electrónica de control"
   - file: "/assets/schematics/robotic-arm/vision-module.svg"
-    description: "Camera module and processing unit connections"
+    description: "Módulo de cámara y conexiones de unidad de procesamiento"
 
 code_files:
   - name: "Inverse Kinematics"

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: About
+title: Acerca de
 permalink: /about/
 ---
 
 <div class="hero-section" style="padding: 100px 0; background: var(--background-color); border-bottom: 1px solid var(--border-color); text-align: center;">
     <div class="container">
-        <h1 style="font-size: var(--font-size-3xl); letter-spacing: -0.02em; color: var(--text-primary);">About MESGRO</h1>
-        <p style="color: var(--text-secondary); opacity: 0.7; max-width: 600px; margin: 0 auto; font-weight: 300;">An open-source portfolio template designed specifically for robotics and mechatronics engineers to showcase their innovative projects.</p>
+        <h1 style="font-size: var(--font-size-3xl); letter-spacing: -0.02em; color: var(--text-primary);">Acerca de MESGRO</h1>
+        <p style="color: var(--text-secondary); opacity: 0.7; max-width: 600px; margin: 0 auto; font-weight: 300;">Una plantilla de portafolio de código abierto diseñada específicamente para ingenieros de robótica y mecatrónica para mostrar sus proyectos innovadores.</p>
     </div>
 </div>
 
@@ -15,74 +15,74 @@ permalink: /about/
     <div class="container">
         
         <section class="about-section">
-            <h2>What is MESGRO?</h2>
-            <p>MESGRO (Mechatronics Engineering Showcase Gallery for Robotics Operations) is a comprehensive Jekyll template that enables engineers, researchers, and students to create stunning portfolios for their robotics and mechatronics projects.</p>
+            <h2>¿Qué es MESGRO?</h2>
+            <p>MESGRO (Mechatronics Engineering Showcase Gallery for Robotics Operations) es una plantilla completa de Jekyll que permite a ingenieros, investigadores y estudiantes crear portafolios impresionantes para sus proyectos de robótica y mecatrónica.</p>
             
-            <p>Built with modern web technologies and designed with user experience in mind, MESGRO provides everything you need to showcase your technical projects professionally and effectively.</p>
+            <p>Construido con tecnologías web modernas y diseñado pensando en la experiencia del usuario, MESGRO proporciona todo lo que necesitas para mostrar tus proyectos técnicos de manera profesional y efectiva.</p>
         </section>
 
         <section class="about-section">
-            <h2>Key Features</h2>
+            <h2>Características Principales</h2>
             <div class="features-list">
                 <div class="feature-item">
-                    <h3><i class="fas fa-cube"></i> Interactive 3D Model Viewer</h3>
-                    <p>Display your mechanical designs, prototypes, and 3D printed parts with an interactive viewer that supports STL, OBJ, GLTF, and GLB formats. Users can rotate, zoom, and explore your designs in detail.</p>
+                    <h3><i class="fas fa-cube"></i> Visor de Modelos 3D Interactivo</h3>
+                    <p>Muestra tus diseños mecánicos, prototipos y piezas impresas en 3D con un visor interactivo que soporta formatos STL, OBJ, GLTF y GLB. Los usuarios pueden rotar, hacer zoom y explorar tus diseños en detalle.</p>
                 </div>
                 
                 <div class="feature-item">
-                    <h3><i class="fas fa-microchip"></i> Circuit Schematic Display</h3>
-                    <p>Showcase your electrical designs with zoomable and pannable circuit diagrams. Perfect for displaying PCB layouts, wiring diagrams, and system architectures.</p>
+                    <h3><i class="fas fa-microchip"></i> Visualización de Esquemas de Circuito</h3>
+                    <p>Muestra tus diseños eléctricos con diagramas de circuito con zoom y desplazamiento. Perfecto para mostrar diseños de PCB, diagramas de cableado y arquitecturas de sistemas.</p>
                 </div>
                 
                 <div class="feature-item">
-                    <h3><i class="fas fa-code"></i> Code Integration</h3>
-                    <p>Present your source code with syntax highlighting, tabbed interfaces, and download links. Supports multiple programming languages including C/C++, Python, Arduino, and more.</p>
+                    <h3><i class="fas fa-code"></i> Integración de Código</h3>
+                    <p>Presenta tu código fuente con resaltado de sintaxis, interfaces con pestañas y enlaces de descarga. Soporta múltiples lenguajes de programación incluyendo C/C++, Python, Arduino y más.</p>
                 </div>
                 
                 <div class="feature-item">
-                    <h3><i class="fas fa-mobile-alt"></i> Responsive Design</h3>
-                    <p>Your portfolio looks great on all devices - from desktop computers to mobile phones. The responsive design ensures optimal viewing experience across all screen sizes.</p>
+                    <h3><i class="fas fa-mobile-alt"></i> Diseño Responsivo</h3>
+                    <p>Tu portafolio se ve excelente en todos los dispositivos - desde computadoras de escritorio hasta teléfonos móviles. El diseño responsivo asegura una experiencia de visualización óptima en todos los tamaños de pantalla.</p>
                 </div>
                 
                 <div class="feature-item">
-                    <h3><i class="fab fa-github"></i> GitHub Pages Compatible</h3>
-                    <p>Deploy your portfolio for free using GitHub Pages. The template is fully compatible with Jekyll and GitHub's hosting platform.</p>
+                    <h3><i class="fab fa-github"></i> Compatible con GitHub Pages</h3>
+                    <p>Despliega tu portafolio gratis usando GitHub Pages. La plantilla es completamente compatible con Jekyll y la plataforma de alojamiento de GitHub.</p>
                 </div>
                 
                 <div class="feature-item">
-                    <h3><i class="fas fa-palette"></i> Customizable Theme</h3>
-                    <p>Dark and light themes with easy customization options. Modify colors, fonts, and layouts to match your personal brand.</p>
+                    <h3><i class="fas fa-palette"></i> Tema Personalizable</h3>
+                    <p>Temas oscuros y claros con opciones de personalización fáciles. Modifica colores, fuentes y diseños para que coincidan con tu marca personal.</p>
                 </div>
             </div>
         </section>
 
         <section class="about-section">
-            <h2>Perfect For</h2>
+            <h2>Perfecto Para</h2>
             <div class="perfect-for-grid">
                 <div class="perfect-for-item">
-                    <h4>Students</h4>
-                    <p>Showcase your coursework, capstone projects, and research work to potential employers and graduate schools.</p>
+                    <h4>Estudiantes</h4>
+                    <p>Muestra tu trabajo de curso, proyectos finales y trabajo de investigación a potenciales empleadores y escuelas de posgrado.</p>
                 </div>
                 
                 <div class="perfect-for-item">
-                    <h4>Engineers</h4>
-                    <p>Display your professional projects, innovations, and technical expertise to colleagues and industry peers.</p>
+                    <h4>Ingenieros</h4>
+                    <p>Exhibe tus proyectos profesionales, innovaciones y experiencia técnica a colegas y compañeros de la industria.</p>
                 </div>
                 
                 <div class="perfect-for-item">
-                    <h4>Researchers</h4>
-                    <p>Present your research findings, prototypes, and experimental setups with rich media and detailed documentation.</p>
+                    <h4>Investigadores</h4>
+                    <p>Presenta tus hallazgos de investigación, prototipos y configuraciones experimentales con medios enriquecidos y documentación detallada.</p>
                 </div>
                 
                 <div class="perfect-for-item">
-                    <h4>Hobbyists</h4>
-                    <p>Share your maker projects, Arduino creations, and DIY robotics builds with the maker community.</p>
+                    <h4>Aficionados</h4>
+                    <p>Comparte tus proyectos maker, creaciones de Arduino y construcciones de robótica DIY con la comunidad maker.</p>
                 </div>
             </div>
         </section>
 
         <section class="about-section">
-            <h2>Built With</h2>
+            <h2>Construido Con</h2>
             <div class="tech-stack">
                 <div class="tech-item">
                     <i class="fab fa-html5"></i>
@@ -112,31 +112,31 @@ permalink: /about/
         </section>
 
         <section class="about-section">
-            <h2>Getting Started</h2>
-            <p>Ready to create your own robotics portfolio? Get started with MESGRO in just a few steps:</p>
+            <h2>Comenzar</h2>
+            <p>¿Listo para crear tu propio portafolio de robótica? Comienza con MESGRO en solo unos pasos:</p>
             
             <ol class="getting-started-steps">
-                <li><strong>Fork the Repository:</strong> Start by forking the MESGRO repository to your GitHub account.</li>
-                <li><strong>Customize Your Content:</strong> Add your projects, update the configuration, and personalize the design.</li>
-                <li><strong>Enable GitHub Pages:</strong> Turn on GitHub Pages in your repository settings to publish your portfolio.</li>
-                <li><strong>Share Your Work:</strong> Your portfolio is now live and ready to share with the world!</li>
+                <li><strong>Haz Fork del Repositorio:</strong> Comienza haciendo fork del repositorio MESGRO a tu cuenta de GitHub.</li>
+                <li><strong>Personaliza tu Contenido:</strong> Agrega tus proyectos, actualiza la configuración y personaliza el diseño.</li>
+                <li><strong>Habilita GitHub Pages:</strong> Activa GitHub Pages en la configuración de tu repositorio para publicar tu portafolio.</li>
+                <li><strong>Comparte tu Trabajo:</strong> ¡Tu portafolio ahora está en vivo y listo para compartir con el mundo!</li>
             </ol>
             
             <div class="cta-buttons">
                 <a href="https://github.com/aojedao/MESGRO" class="btn-primary" target="_blank">
-                    <i class="fab fa-github"></i> Get Started on GitHub
+                    <i class="fab fa-github"></i> Comenzar en GitHub
                 </a>
                 <a href="{{ '/projects/' | relative_url }}" class="btn-secondary">
-                    <i class="fas fa-eye"></i> View Example Projects
+                    <i class="fas fa-eye"></i> Ver Proyectos de Ejemplo
                 </a>
             </div>
         </section>
 
         <section class="about-section">
-            <h2>Contributing</h2>
-            <p>MESGRO is an open-source project and we welcome contributions from the community. Whether you're fixing bugs, adding new features, or improving documentation, your help is appreciated.</p>
+            <h2>Contribuir</h2>
+            <p>MESGRO es un proyecto de código abierto y damos la bienvenida a contribuciones de la comunidad. Ya sea que estés corrigiendo errores, agregando nuevas características o mejorando la documentación, tu ayuda es apreciada.</p>
             
-            <p>Check out our <a href="https://github.com/aojedao/MESGRO/blob/main/CONTRIBUTING.md" target="_blank">Contributing Guide</a> to get started.</p>
+            <p>Consulta nuestra <a href="https://github.com/aojedao/MESGRO/blob/main/CONTRIBUTING.md" target="_blank">Guía de Contribución</a> para comenzar.</p>
         </section>
 
     </div>

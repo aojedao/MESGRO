@@ -1,0 +1,69 @@
+en:
+  site:
+    title: "MESGRO - Robotics & Mechatronics Portfolio"
+    description: "An open-source template for showcasing robotics and mechatronics projects with 3D models, schematics, and code"
+  nav:
+    home: "Home"
+    projects: "Projects"
+    about: "About"
+  hero:
+    subtitle: "Robotics & Mechatronics"
+    about_btn: "About"
+    contact_btn: "Contact"
+  portfolio:
+    title: "Portfolio"
+    subtitle: "A curated collection of my research and design"
+  project:
+    overview: "Overview"
+    features: "Key Features"
+    technical: "Technical Details"
+    components: "Components"
+    specs: "Technical Specifications"
+    model: "3D Model"
+    schematic: "Circuit Schematic"
+    code: "Source Code"
+    github: "View on GitHub"
+    categories: "Categories"
+    date: "Date"
+    status: "Status"
+  footer:
+    rights: "All rights reserved"
+    built_with: "Built with Jekyll"
+  language:
+    switch_to_spanish: "Español"
+    switch_to_english: "English"
+
+es:
+  site:
+    title: "MESGRO - Portafolio de Robótica y Mecatrónica"
+    description: "Una plantilla de código abierto para mostrar proyectos de robótica y mecatrónica con modelos 3D, esquemas y código"
+  nav:
+    home: "Inicio"
+    projects: "Proyectos"
+    about: "Acerca de"
+  hero:
+    subtitle: "Robótica y Mecatrónica"
+    about_btn: "Acerca de"
+    contact_btn: "Contacto"
+  portfolio:
+    title: "Portafolio"
+    subtitle: "Una colección curada de mi investigación y diseño"
+  project:
+    overview: "Descripción General"
+    features: "Características Principales"
+    technical: "Detalles Técnicos"
+    components: "Componentes"
+    specs: "Especificaciones Técnicas"
+    model: "Modelo 3D"
+    schematic: "Esquema de Circuito"
+    code: "Código Fuente"
+    github: "Ver en GitHub"
+    categories: "Categorías"
+    date: "Fecha"
+    status: "Estado"
+  footer:
+    rights: "Todos los derechos reservados"
+    built_with: "Construido con Jekyll"
+  language:
+    switch_to_spanish: "Español"
+    switch_to_english: "English"

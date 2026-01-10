@@ -1,9 +1,9 @@
 ---
 layout: project
-title: "IoT Environmental Monitoring Station"
-description: "A comprehensive IoT-based environmental monitoring system with wireless sensors, real-time data visualization, and automated alerts for greenhouse and outdoor applications."
+title: "Estación de Monitoreo Ambiental IoT"
+description: "Un sistema completo de monitoreo ambiental basado en IoT con sensores inalámbricos, visualización de datos en tiempo real y alertas automatizadas para invernaderos y aplicaciones al aire libre."
 date: 2024-08-10
-categories: [IoT, Arduino, Mechatronics, Data Science]
+categories: [IoT, Arduino, Mecatrónica, Ciencia de Datos]
 featured_image: "/assets/images/projects/iot-monitor/sensor-monitoring.gif"
 github_url: "https://github.com/aojedao/iot-environmental-monitor"
 demo_url: "#"
@@ -11,17 +11,17 @@ interactive_plot: true
 
 models:
   - file: "/assets/models/iot-monitor/sensor-housing.gltf"
-    description: "Weatherproof housing for outdoor sensor deployment"
+    description: "Carcasa resistente a la intemperie para despliegue de sensores al aire libre"
   - file: "/assets/models/iot-monitor/test.gltf"
-    description: "IoT sensor enclosure 3D model"
+    description: "Modelo 3D de caja de sensores IoT"
 
 schematics:
   - file: "/assets/schematics/iot-monitor/main-board.svg"
-    description: "ESP32 main control board with sensor interfaces"
+    description: "Placa de control principal ESP32 con interfaces de sensores"
   - file: "/assets/schematics/iot-monitor/power-management.svg"
-    description: "Solar charging system with battery backup"
+    description: "Sistema de carga solar con batería de respaldo"
   - file: "/assets/schematics/iot-monitor/sensor-network.svg"
-    description: "Wireless sensor network topology and communication"
+    description: "Topología de red de sensores inalámbricos y comunicación"
 
 code_files:
   - name: "ESP32 Firmware"
