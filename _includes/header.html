@@ -21,8 +21,8 @@
             </nav>
 
             <div class="header-actions">
-                <a href="https://github.com/aojedao/MESGRO/tree/main" class="language-toggle" title="{% include translate.html key='language.switch_to_english' %}">
-                    EN
+                <a href="#" class="language-toggle" title="{% include translate.html key='language.switch_to_english' %}">
+                    {% if site.lang == "es" %}EN{% else %}ES{% endif %}
                 </a>
                 
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">

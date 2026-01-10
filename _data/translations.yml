@@ -2,6 +2,7 @@ en:
   site:
     title: "MESGRO - Robotics & Mechatronics Portfolio"
     description: "An open-source template for showcasing robotics and mechatronics projects with 3D models, schematics, and code"
+    author_name: "Your Name"
   nav:
     home: "Home"
     projects: "Projects"
@@ -21,11 +22,13 @@ en:
     specs: "Technical Specifications"
     model: "3D Model"
     schematic: "Circuit Schematic"
+    schematics: "Circuit Schematics"
     code: "Source Code"
     github: "View on GitHub"
     categories: "Categories"
     date: "Date"
     status: "Status"
+    performance: "System Performance Data"
   footer:
     rights: "All rights reserved"
     built_with: "Built with Jekyll"
@@ -37,6 +40,7 @@ es:
   site:
     title: "MESGRO - Portafolio de Robótica y Mecatrónica"
     description: "Una plantilla de código abierto para mostrar proyectos de robótica y mecatrónica con modelos 3D, esquemas y código"
+    author_name: "tu nombre"
   nav:
     home: "Inicio"
     projects: "Proyectos"
@@ -56,11 +60,13 @@ es:
     specs: "Especificaciones Técnicas"
     model: "Modelo 3D"
     schematic: "Esquema de Circuito"
+    schematics: "Esquemas de Circuito"
     code: "Código Fuente"
     github: "Ver en GitHub"
     categories: "Categorías"
     date: "Fecha"
     status: "Estado"
+    performance: "Datos de Rendimiento del Sistema"
   footer:
     rights: "Todos los derechos reservados"
     built_with: "Construido con Jekyll"
