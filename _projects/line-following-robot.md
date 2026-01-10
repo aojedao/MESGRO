@@ -290,40 +290,36 @@ gallery:
 
 ## Project Overview
 
-This project demonstrates the design and implementation of an autonomous line-following robot using Arduino Uno and advanced control algorithms. The robot features PID (Proportional-Integral-Derivative) control for smooth line tracking, obstacle detection capabilities, and wireless parameter tuning.
+<span data-i18n="project.line_overview">This project demonstrates the design and implementation of an autonomous line-following robot using Arduino Uno and advanced control algorithms. The robot features PID (Proportional-Integral-Derivative) control for smooth line tracking, obstacle detection capabilities, and wireless parameter tuning.</span>
 
-## Key Features
+## <span data-i18n="project.features">Key Features</span>
 
-### Advanced Control System
-- **PID Controller**: Implements a sophisticated PID control algorithm for precise line following
-- **Sensor Fusion**: Uses a 5-sensor IR array for accurate line position detection
-- **Adaptive Speed**: Automatically adjusts speed based on track curvature
+### <span data-i18n="project.advanced_control">Advanced Control System</span>
+- **<span data-i18n="project.pid_controller">PID Controller: Implements a sophisticated PID control algorithm for precise line following</span>**
+- **<span data-i18n="project.sensor_fusion">Sensor Fusion: Uses a 5-sensor IR array for accurate line position detection</span>**
+- **<span data-i18n="project.adaptive_speed">Adaptive Speed: Automatically adjusts speed based on track curvature</span>**
 
-### Wireless Monitoring
-- **Real-time Telemetry**: Sends sensor data and control parameters via Bluetooth
-- **Parameter Tuning**: Live PID parameter adjustment using custom Python GUI
-- **Performance Logging**: Records track performance for analysis and optimization
+### <span data-i18n="project.wireless_telemetry">Wireless Monitoring</span>
+- **<span data-i18n="project.wireless_telemetry">Real-time Telemetry: Sends sensor data and control parameters via Bluetooth</span>**
+- **<span data-i18n="project.param_tuning">Parameter Tuning: Live PID parameter adjustment using custom Python GUI</span>**
+- **<span data-i18n="project.perf_logging">Performance Logging: Records track performance for analysis and optimization</span>**
 
-### Safety Features
-- **Obstacle Detection**: Ultrasonic sensor for collision avoidance
-- **Battery Management**: Low voltage detection and automatic shutdown
-- **Emergency Stop**: Wireless emergency stop functionality
+### <span data-i18n="project.emergency_stop">Safety Features</span>
+- **<span data-i18n="project.obstacle_detection">Obstacle Detection: Ultrasonic sensor for collision avoidance</span>**
+- **<span data-i18n="project.battery_mgmt">Battery Management: Low voltage detection and automatic shutdown</span>**
+- **<span data-i18n="project.emergency_stop">Emergency Stop: Wireless emergency stop functionality</span>**
 
-## Technical Specifications
-
-| Specification | Value |
+## <span data-i18n="project.specs">Technical Specifications</span>
 |---------------|-------|
-| **Microcontroller** | Arduino Uno R3 (ATmega328P) |
-| **Operating Voltage** | 7.4V (2S LiPo) |
-| **Maximum Speed** | 1.2 m/s |
-| **Line Detection Range** | 12cm wide sensor array |
-| **Battery Life** | 45 minutes continuous operation |
-| **Weight** | 485g |
-| **Dimensions** | 18cm x 12cm x 8cm |
+| **<span data-i18n="project.specs_microcontroller">Microcontroller</span>** | <span data-i18n="project.specs_microcontroller">Arduino Uno R3 (ATmega328P)</span> |
+| **Operating Voltage** | <span data-i18n="project.specs_voltage">7.4V (2S LiPo)</span> |
+| **Maximum Speed** | <span data-i18n="project.specs_max_speed">1.2 m/s</span> |
+| **Line Detection Range** | <span data-i18n="project.specs_detection_range">12cm wide sensor array</span> |
+| **Battery Life** | <span data-i18n="project.specs_battery_life">45 minutes continuous operation</span> |
+| **Weight** | <span data-i18n="project.specs_weight">485g</span> |
+| **Dimensions** | <span data-i18n="project.specs_dimensions">18cm x 12cm x 8cm</span> |
 
-## Algorithm Implementation
-
-The robot uses a weighted average algorithm to determine line position:
+## <span data-i18n="project.algorithms">Algorithm Implementation</span>
 
 1. **Sensor Reading**: Five IR sensors provide analog values (0-1023)
 2. **Thresholding**: Convert analog values to binary (line/no line)
@@ -425,52 +421,53 @@ plt.tight_layout()
 plt.show()
 ```
 
-## Performance Results
+## <span data-i18n="project.performance">Performance Results</span>
 
-After extensive testing and PID tuning, the robot achieved:
-- **Line Following Accuracy**: 95% on standard tracks
-- **Maximum Track Speed**: Successfully follows lines at 80cm/s
-- **Curve Handling**: Navigates 90° turns without losing the line
-- **Obstacle Response**: Stops within 10cm of detected obstacles
+<p data-i18n="project.performance_intro">After extensive testing and PID tuning, the robot achieved:</p>
 
-## Lessons Learned
+- <strong><span data-i18n="project.line_accuracy">Line Following Accuracy</span></strong>: <span data-i18n="project.line_accuracy_val">95% on standard tracks</span>
+- <strong><span data-i18n="project.max_speed">Maximum Track Speed</span></strong>: <span data-i18n="project.max_speed_val">Successfully follows lines at 80cm/s</span>
+- <strong><span data-i18n="project.curve_handling">Curve Handling</span></strong>: <span data-i18n="project.curve_handling_val">Navigates 90° turns without losing the line</span>
+- <strong><span data-i18n="project.obstacle_response">Obstacle Response</span></strong>: <span data-i18n="project.obstacle_response_val">Stops within 10cm of detected obstacles</span>
 
-1. **PID Tuning**: Start with proportional control only, then add integral and derivative terms
-2. **Sensor Calibration**: Regular calibration is crucial for consistent performance
-3. **Power Management**: Use voltage regulators for stable sensor readings
-4. **Mechanical Design**: Proper wheel alignment significantly improves tracking accuracy
+## <span data-i18n="project.lessons_learned">Lessons Learned</span>
 
-## Future Improvements
+1. <strong><span data-i18n="project.pid_tuning">PID Tuning</span>:</strong> <span data-i18n="project.pid_desc">Start with proportional control only, then add integral and derivative terms</span>
+2. <strong><span data-i18n="project.sensor_calibration">Sensor Calibration</span>:</strong> <span data-i18n="project.sensor_calib_desc">Regular calibration is crucial for consistent performance</span>
+3. <strong><span data-i18n="project.power_management">Power Management</span>:</strong> <span data-i18n="project.power_desc">Use voltage regulators for stable sensor readings</span>
+4. <strong><span data-i18n="project.mechanical_design">Mechanical Design</span>:</strong> <span data-i18n="project.mech_desc">Proper wheel alignment significantly improves tracking accuracy</span>
 
-- **Machine Learning**: Implement adaptive PID parameters using reinforcement learning
-- **Multi-Line Support**: Add capability to handle intersections and multiple line paths
-- **Wireless Communication**: Upgrade to WiFi for remote monitoring and control
-- **Advanced Sensors**: Add color sensors for enhanced track detection
+## <span data-i18n="project.future_improvements">Future Improvements</span>
 
-## Build Instructions
+- <strong><span data-i18n="project.machine_learning">Machine Learning</span>:</strong> <span data-i18n="project.ml_desc">Implement adaptive PID parameters using reinforcement learning</span>
+- <strong><span data-i18n="project.multi_line">Multi-Line Support</span>:</strong> <span data-i18n="project.multi_line_desc">Add capability to handle intersections and multiple line paths</span>
+- <strong><span data-i18n="project.wireless_comm">Wireless Communication</span>:</strong> <span data-i18n="project.wireless_desc">Upgrade to WiFi for remote monitoring and control</span>
+- <strong><span data-i18n="project.advanced_sensors">Advanced Sensors</span>:</strong> <span data-i18n="project.adv_sensors_desc">Add color sensors for enhanced track detection</span>
+
+## <span data-i18n="project.build_instructions">Build Instructions</span>
 
 
 <details class="assembly-details">
-<summary>Assembly Instructions</summary>
+<summary data-i18n="project.assembly">Assembly Instructions</summary>
 <div class="assembly-content" markdown="1">
 
-### Step 1: Mechanical Assembly
-1. 3D print the chassis using the provided STL files
-2. Mount the motors and wheels to the chassis
-3. Install the sensor array at the front of the robot
-4. Secure the Arduino and motor driver board
+### <span data-i18n="project.mechanical_assembly">Mechanical Assembly</span>
+1. <span data-i18n="project.assembly_step1">3D print the chassis using the provided STL files</span>
+2. <span data-i18n="project.assembly_step2">Mount the motors and wheels to the chassis</span>
+3. <span data-i18n="project.assembly_step3">Install the sensor array at the front of the robot</span>
+4. <span data-i18n="project.assembly_step4">Secure the Arduino and motor driver board</span>
 
-### Step 2: Electronics
-1. Follow the circuit schematic to connect all components
-2. Use the custom PCB design for a cleaner installation
-3. Test all connections before powering on
-4. Upload the Arduino code and calibrate sensors
+### <span data-i18n="project.electronics">Electronics</span>
+1. <span data-i18n="project.electronics_step1">Follow the circuit schematic to connect all components</span>
+2. <span data-i18n="project.electronics_step2">Use the custom PCB design for a cleaner installation</span>
+3. <span data-i18n="project.electronics_step3">Test all connections before powering on</span>
+4. <span data-i18n="project.electronics_step4">Upload the Arduino code and calibrate sensors</span>
 
-### Step 3: Software Setup
-1. Install the Arduino IDE and required libraries
-2. Upload the main control code to the Arduino
-3. Install Python dependencies for the tuning interface
-4. Run initial calibration and PID tuning procedures
+### <span data-i18n="project.software_setup">Software Setup</span>
+1. <span data-i18n="project.software_step1">Install the Arduino IDE and required libraries</span>
+2. <span data-i18n="project.software_step2">Upload the main control code to the Arduino</span>
+3. <span data-i18n="project.software_step3">Install Python dependencies for the tuning interface</span>
+4. <span data-i18n="project.software_step4">Run initial calibration and PID tuning procedures</span>
 
 </div>
 </details>

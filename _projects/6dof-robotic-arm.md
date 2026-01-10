@@ -357,51 +357,49 @@ gallery:
 
 ## Project Overview
 
-This project presents the design and implementation of a sophisticated 6-degree-of-freedom robotic arm integrated with a computer vision system for autonomous object manipulation. The system combines advanced inverse kinematics algorithms, real-time object detection using YOLO, and precise servo control to achieve accurate pick-and-place operations.
+<span data-i18n="project.6dof_overview">This project presents the design and implementation of a sophisticated 6-degree-of-freedom robotic arm integrated with a computer vision system for autonomous object manipulation. The system combines advanced inverse kinematics algorithms, real-time object detection using YOLO, and precise servo control to achieve accurate pick-and-place operations.</span>
 
-## Key Features
+## <span data-i18n="project.features">Key Features</span>
 
-### Mechanical Design
-- **6 Degrees of Freedom**: Full spatial manipulation capability
-- **Precision Joints**: Ball bearing supported joints for smooth operation
-- **Custom Gripper**: Force-feedback enabled end-effector
-- **Modular Design**: Easy maintenance and component replacement
+### <span data-i18n="project.mechanical_design_title">Mechanical Design</span>
+- **<span data-i18n="project.six_dof">6 Degrees of Freedom: Full spatial manipulation capability</span>**
+- **<span data-i18n="project.precision_joints">Precision Joints: Ball bearing supported joints for smooth operation</span>**
+- **<span data-i18n="project.custom_gripper">Custom Gripper: Force-feedback enabled end-effector</span>**
+- **<span data-i18n="project.modular_design">Modular Design: Easy maintenance and component replacement</span>**
 
-### Intelligent Control System
-- **Inverse Kinematics**: Real-time calculation of joint angles for desired positions
-- **Path Planning**: Smooth trajectory generation with obstacle avoidance
-- **Force Control**: Gentle object handling with force feedback
-- **Safety Limits**: Joint limit protection and collision detection
+### <span data-i18n="project.ik_system">Intelligent Control System</span>
+- **<span data-i18n="project.inv_kinematics">Inverse Kinematics: Real-time calculation of joint angles for desired positions</span>**
+- **<span data-i18n="project.path_planning">Path Planning: Smooth trajectory generation with obstacle avoidance</span>**
+- **<span data-i18n="project.force_control">Force Control: Gentle object handling with force feedback</span>**
+- **<span data-i18n="project.safety_limits">Safety Limits: Joint limit protection and collision detection</span>**
 
-### Computer Vision
-- **Real-time Object Detection**: YOLO-based detection of common objects
-- **3D Position Estimation**: Convert 2D detections to 3D world coordinates
-- **Object Classification**: Identify and categorize manipulation targets
-- **Visual Servoing**: Closed-loop control using visual feedback
+### <span data-i18n="project.computer_vision_title">Computer Vision</span>
+- **<span data-i18n="project.rtod">Real-time Object Detection: YOLO-based detection of common objects</span>**
+- **<span data-i18n="project.pos_estimation">3D Position Estimation: Convert 2D detections to 3D world coordinates</span>**
+- **<span data-i18n="project.obj_classification">Object Classification: Identify and categorize manipulation targets</span>**
+- **<span data-i18n="project.visual_servoing">Visual Servoing: Closed-loop control using visual feedback</span>**
 
-## Technical Specifications
-
-| Component | Specification |
+## <span data-i18n="project.specs">Technical Specifications</span>
 |-----------|---------------|
-| **Reach** | 400mm maximum |
-| **Payload** | 500g maximum |
-| **Repeatability** | ±2mm |
-| **Joint Resolution** | 0.1° per step |
-| **Operating Speed** | 50°/second maximum |
-| **Vision Resolution** | 1920x1080 @ 30fps |
-| **Processing Power** | Raspberry Pi 4B (4GB RAM) |
-| **Control Frequency** | 100Hz servo update rate |
+| **Reach** | <span data-i18n="project.6dof_specs.0">400mm maximum</span> |
+| **Payload** | <span data-i18n="project.6dof_specs.1">500g maximum</span> |
+| **Repeatability** | <span data-i18n="project.6dof_specs.2">±2mm</span> |
+| **Joint Resolution** | <span data-i18n="project.6dof_specs.3">0.1° per step</span> |
+| **Operating Speed** | <span data-i18n="project.6dof_specs.4">50°/second maximum</span> |
+| **Vision Resolution** | <span data-i18n="project.6dof_specs.5">1920x1080 @ 30fps</span> |
+| **Processing Power** | <span data-i18n="project.6dof_specs.6">Raspberry Pi 4B (4GB RAM)</span> |
+| **Control Frequency** | <span data-i18n="project.6dof_specs.7">100Hz servo update rate</span> |
 
-## System Architecture
+## <span data-i18n="project.system_architecture">System Architecture</span>
 
-### Hardware Architecture
-1. **Raspberry Pi 4B**: Main processing unit running computer vision and high-level control
+### <span data-i18n="project.hardware_components">Hardware Architecture</span>
+1. **Raspberry Pi 4B**: <span data-i18n="project.esp32">Main processing unit running computer vision and high-level control</span>
 2. **Arduino Mega**: Real-time servo control and sensor interface
 3. **PCA9685**: 16-channel PWM driver for precise servo control
 4. **USB Camera**: High-resolution camera for object detection
 5. **Custom PCB**: Power distribution and signal conditioning
 
-### Software Architecture
+### <span data-i18n="project.software_stack">Software Architecture</span>
 - **ROS (Robot Operating System)**: Communication between components
 - **OpenCV**: Computer vision processing
 - **PyTorch/YOLO**: Object detection and classification
@@ -442,15 +440,15 @@ For the first three joints (positioning the wrist):
 
 
 <details class="assembly-details">
-<summary>Assembly Instructions</summary>
+<summary data-i18n="project.assembly">Assembly Instructions</summary>
 <div class="assembly-content" markdown="1">
 
-### Mechanical Assembly
+### <span data-i18n="project.mechanical_assembly">Mechanical Assembly</span>
 1. **Base Assembly**: Mount servos to the base plate using M3 screws.
 2. **Arm Segments**: Connect the lower and upper arm segments, ensuring smooth bearing rotation.
 3. **Gripper**: Attach the custom gripper to the wrist servo.
 
-### Electronics Assembly
+### <span data-i18n="project.electronics">Electronics Assembly</span>
 1. **Wiring**: Connect all servos to the PCA9685 driver board.
 2. **Controller**: Connect the Raspberry Pi and Arduino via USB.
 3. **Power**: Connect the 12V power supply to the servo driver.
@@ -658,12 +656,12 @@ plt.tight_layout()
 plt.show()
 ```
 
-## Performance Results
+## <span data-i18n="project.performance">Performance Results</span>
 
-### Accuracy Testing
-- **Position Accuracy**: Mean error of 1.2mm across workspace
-- **Repeatability**: Standard deviation of 0.8mm over 1000 cycles
-- **Object Detection**: 94% success rate for target objects
+### <span data-i18n="project.accuracy_validation">Accuracy Testing</span>
+- <span data-i18n="project.arm_accuracy">Position Accuracy: Mean error of 1.2mm across workspace</span>
+- <span data-i18n="project.arm_repeatability">Repeatability: Standard deviation of 0.8mm over 1000 cycles</span>
+- <span data-i18n="project.object_detection">Object Detection: 94% success rate for target objects</span>
 
 ### Speed Performance
 - **Pick-Place Cycle**: 12 seconds average for 200mm movement
@@ -687,7 +685,9 @@ plt.show()
 - Measures dimensions using computer vision
 - Rejects defective items automatically
 
-## Lessons Learned
+## <span data-i18n="project.lessons_learned">Lessons Learned</span>
+1. **Joint Stiffness**: Critical for accuracy under load
+## <span data-i18n="project.lessons_learned">Lessons Learned</span>
 
 ### Mechanical Design
 1. **Joint Stiffness**: Critical for accuracy under load
@@ -704,11 +704,7 @@ plt.show()
 2. **Coordinate Frame Alignment**: Precise calibration between camera and robot frames
 3. **Environmental Factors**: Lighting conditions significantly affect detection reliability
 
-## Future Enhancements
-
-### Hardware Improvements
-- **Force/Torque Sensors**: Each joint for better compliance control
-- **Stereo Vision**: Improved depth perception and accuracy
+## <span data-i18n="project.future_improvements">Future Enhancements</span>
 - **Upgraded Servos**: Higher resolution encoders for better positioning
 
 ### Software Enhancements

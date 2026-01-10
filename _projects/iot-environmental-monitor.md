@@ -770,86 +770,84 @@ gallery:
 
 ## Project Overview
 
-This IoT Environmental Monitoring Station is a comprehensive system designed to collect, process, and visualize environmental data for agricultural, research, and monitoring applications. The system combines multiple sensors, wireless communication, solar power, and cloud-based data processing to provide real-time insights into environmental conditions.
+<span data-i18n="project.iot_overview">This IoT Environmental Monitoring Station is a comprehensive system designed to collect, process, and visualize environmental data for agricultural, research, and monitoring applications. The system combines multiple sensors, wireless communication, solar power, and cloud-based data processing to provide real-time insights into environmental conditions.</span>
 
-## System Architecture
+## <span data-i18n="project.system_architecture">System Architecture</span>
 
-### Hardware Components
-- **ESP32 Microcontroller**: Main processing unit with WiFi connectivity
-- **Multi-Sensor Array**: Temperature, humidity, pressure, light, soil conditions, and weather
-- **Solar Power System**: Self-sustaining power with battery backup
-- **Weatherproof Enclosure**: IP65-rated protection for outdoor deployment
+### <span data-i18n="project.hardware_components">Hardware Components</span>
+- **<span data-i18n="project.esp32">ESP32 Microcontroller: Main processing unit with WiFi connectivity</span>**
+- **<span data-i18n="project.multi_sensor">Multi-Sensor Array: Temperature, humidity, pressure, light, soil conditions, and weather</span>**
+- **<span data-i18n="project.solar_power">Solar Power System: Self-sustaining power with battery backup</span>**
+- **<span data-i18n="project.weatherproof">Weatherproof Enclosure: IP65-rated protection for outdoor deployment</span>**
 
-### Software Stack
-- **Embedded Firmware**: C++ on ESP32 for sensor reading and data transmission
-- **MQTT Protocol**: Lightweight messaging for IoT communication
-- **Python Backend**: Data processing, storage, and analysis
-- **Web Dashboard**: Real-time visualization and monitoring interface
-- **Mobile App**: Remote monitoring and alert notifications
+### <span data-i18n="project.software_stack">Software Stack</span>
+- **<span data-i18n="project.firmware">Embedded Firmware: C++ on ESP32 for sensor reading and data transmission</span>**
+- **<span data-i18n="project.mqtt">MQTT Protocol: Lightweight messaging for IoT communication</span>**
+- **<span data-i18n="project.backend">Python Backend: Data processing, storage, and analysis</span>**
+- **<span data-i18n="project.dashboard">Web Dashboard: Real-time visualization and monitoring interface</span>**
+- **<span data-i18n="project.mobile_app">Mobile App: Remote monitoring and alert notifications</span>**
 
-## Key Features
+## <span data-i18n="project.features">Key Features</span>
 
-### Comprehensive Monitoring
-- **Temperature & Humidity**: High-precision DHT22 sensor
-- **Atmospheric Pressure**: BMP280 barometric sensor
-- **Light Levels**: TSL2561 digital luminosity sensor
-- **Soil Conditions**: Moisture and temperature monitoring
-- **Weather Data**: Rain detection, wind speed and direction
+### <span data-i18n="project.comprehensive_monitoring">Comprehensive Monitoring</span>
+- **<span data-i18n="project.temp_humidity">Temperature & Humidity: High-precision DHT22 sensor</span>**
+- **<span data-i18n="project.atm_pressure">Atmospheric Pressure: BMP280 barometric sensor</span>**
+- **<span data-i18n="project.light_levels">Light Levels: TSL2561 digital luminosity sensor</span>**
+- **<span data-i18n="project.soil_monitoring">Soil Conditions: Moisture and temperature monitoring</span>**
+- **<span data-i18n="project.weather_data">Weather Data: Rain detection, wind speed and direction</span>**
 
-### Energy Efficient Design
-- **Solar Powered**: 6W solar panel with MPPT charging
-- **Battery Backup**: 2000mAh LiPo for 72-hour operation without sun
-- **Sleep Modes**: Ultra-low power consumption between readings
-- **Power Monitoring**: Real-time battery voltage and charging status
+### <span data-i18n="project.energy_efficient">Energy Efficient Design</span>
+- **<span data-i18n="project.solar_powered">Solar Powered: 6W solar panel with MPPT charging</span>**
+- **<span data-i18n="project.battery_backup">Battery Backup: 2000mAh LiPo for 72-hour operation without sun</span>**
+- **<span data-i18n="project.sleep_modes">Sleep Modes: Ultra-low power consumption between readings</span>**
+- **<span data-i18n="project.power_monitoring">Power Monitoring: Real-time battery voltage and charging status</span>**
 
-### Wireless Connectivity
-- **WiFi Communication**: IEEE 802.11 b/g/n connectivity
-- **MQTT Protocol**: Efficient publish/subscribe messaging
-- **Over-the-Air Updates**: Remote firmware updates
-- **Fallback Storage**: Local data logging when offline
+### <span data-i18n="project.wireless_connectivity">Wireless Connectivity</span>
+- **<span data-i18n="project.wifi_comm">WiFi Communication: IEEE 802.11 b/g/n connectivity</span>**
+- **<span data-i18n="project.mqtt_messaging">MQTT Messaging: Efficient publish/subscribe messaging</span>**
+- **<span data-i18n="project.ota_updates">Over-the-Air Updates: Remote firmware updates</span>**
+- **<span data-i18n="project.fallback_storage">Fallback Storage: Local data logging when offline</span>**
 
-### Intelligent Alerting
-- **Threshold Monitoring**: Customizable alert thresholds
-- **Multi-Channel Notifications**: Email, SMS, and push notifications
-- **Smart Filtering**: Reduces false alarms with trend analysis
-- **Escalation Policies**: Different alert levels based on severity
+### <span data-i18n="project.intelligent_alerting">Intelligent Alerting</span>
+- **<span data-i18n="project.threshold_monitoring">Threshold Monitoring: Customizable alert thresholds</span>**
+- **<span data-i18n="project.notifications">Multi-Channel Notifications: Email, SMS, and push notifications</span>**
+- **<span data-i18n="project.smart_filtering">Smart Filtering: Reduces false alarms with trend analysis</span>**
+- **<span data-i18n="project.escalation">Escalation Policies: Different alert levels based on severity</span>**
 
-## Technical Specifications
-
-| Parameter | Specification |
+## <span data-i18n="project.specs">Technical Specifications</span>
 |-----------|---------------|
-| **Operating Voltage** | 3.3V (regulated from solar/battery) |
-| **Power Consumption** | 45mA active, 10μA sleep |
-| **Transmission Range** | WiFi: 100m (outdoor) |
-| **Data Resolution** | Temperature: ±0.1°C, Humidity: ±2% |
-| **Sampling Rate** | 30 seconds (configurable) |
-| **Data Storage** | 1MB onboard flash + cloud storage |
-| **Operating Temperature** | -40°C to +85°C |
-| **Weather Rating** | IP65 (dust tight, water resistant) |
+| **Operating Voltage** | <span data-i18n="project.iot_specs.0">3.3V (regulated from solar/battery)</span> |
+| **Power Consumption** | <span data-i18n="project.iot_specs.1">45mA active, 10μA sleep</span> |
+| **Transmission Range** | <span data-i18n="project.iot_specs.2">WiFi: 100m (outdoor)</span> |
+| **Data Resolution** | <span data-i18n="project.iot_specs.3">Temperature: ±0.1°C, Humidity: ±2%</span> |
+| **Sampling Rate** | <span data-i18n="project.iot_specs.4">30 seconds (configurable)</span> |
+| **Data Storage** | <span data-i18n="project.iot_specs.5">1MB onboard flash + cloud storage</span> |
+| **Operating Temperature** | <span data-i18n="project.iot_specs.6">-40°C to +85°C</span> |
+| **Weather Rating** | <span data-i18n="project.iot_specs.7">IP65 (dust tight, water resistant)</span> |
 
-## Sensor Details
+## <span data-i18n="project.sensor_details">Sensor Details</span>
 
-### Environmental Sensors
-1. **DHT22**: ±0.5°C temperature, ±2-5% humidity accuracy
-2. **BMP280**: ±1 hPa pressure accuracy, 0.17m altitude resolution
-3. **TSL2561**: 0.1 to 40,000 lux light measurement range
+### <span data-i18n="project.environmental_sensors">Environmental Sensors</span>
+1. **<span data-i18n="project.dht22">DHT22: ±0.5°C temperature, ±2-5% humidity accuracy</span>**
+2. **<span data-i18n="project.bmp280">BMP280: ±1 hPa pressure accuracy, 0.17m altitude resolution</span>**
+3. **<span data-i18n="project.tsl2561">TSL2561: 0.1 to 40,000 lux light measurement range</span>**
 
-### Agricultural Sensors
-1. **Capacitive Soil Moisture**: Corrosion-resistant, 0-100% range
-2. **DS18B20 Soil Temperature**: Waterproof, ±0.5°C accuracy
-3. **Rain Sensor**: Digital rain/no-rain detection
+### <span data-i18n="project.agricultural">Agricultural Sensors</span>
+1. **<span data-i18n="project.soil_moisture">Capacitive Soil Moisture: Corrosion-resistant, 0-100% range</span>**
+2. **<span data-i18n="project.soil_temp">DS18B20 Soil Temperature: Waterproof, ±0.5°C accuracy</span>**
+3. **<span data-i18n="project.rain_sensor">Rain Sensor: Digital rain/no-rain detection</span>**
 
-### Weather Sensors
-1. **Anemometer**: Hall effect, 0-70 m/s wind speed range
-2. **Wind Vane**: 16-position wind direction measurement
-3. **Weather Station Integration**: Compatible with standard protocols
+### <span data-i18n="project.weather_sensors">Weather Sensors</span>
+1. **<span data-i18n="project.anemometer">Anemometer: Hall effect, 0-70 m/s wind speed range</span>**
+2. **<span data-i18n="project.wind_vane">Wind Vane: 16-position wind direction measurement</span>**
+3. **<span data-i18n="project.weather_station">Weather Station Integration: Compatible with standard protocols</span>**
 
-## Data Processing Pipeline
+## <span data-i18n="project.data_processing">Data Processing Pipeline</span>
 
-### Real-Time Processing
-1. **Sensor Fusion**: Combines multiple sensor readings for accuracy
-2. **Quality Checks**: Validates data for sensor errors and outliers
-3. **Calibration**: Automatic drift compensation and calibration
+### <span data-i18n="project.real_time">Real-Time Processing</span>
+1. **<span data-i18n="project.sensor_fusion_dp">Sensor Fusion: Combines multiple sensor readings for accuracy</span>**
+2. **<span data-i18n="project.quality_checks">Quality Checks: Validates data for sensor errors and outliers</span>**
+3. **<span data-i18n="project.calibration">Calibration: Automatic drift compensation and calibration</span>**
 4. **Aggregation**: Computes moving averages and trends
 
 ### Advanced Analytics
@@ -876,7 +874,7 @@ This IoT Environmental Monitoring Station is a comprehensive system designed to 
 
 
 <details class="assembly-details">
-<summary>Installation & Deployment</summary>
+<summary data-i18n="project.assembly">Installation & Deployment</summary>
 <div class="assembly-content" markdown="1">
 
 ### Site Preparation
@@ -1129,19 +1127,19 @@ plt.tight_layout()
 plt.show()
 ```
 
-## Performance Results
+## <span data-i18n="project.performance">Performance Results</span>
 
-### Accuracy Validation
-- **Temperature**: ±0.3°C compared to reference thermometer
-- **Humidity**: ±3% compared to professional hygrometer
-- **Pressure**: ±0.5 hPa compared to reference weather station
-- **Soil Moisture**: ±5% validated with gravimetric method
+### <span data-i18n="project.accuracy_validation">Accuracy Validation</span>
+- <span data-i18n="project.temperature_accuracy">Temperature: ±0.3°C compared to reference thermometer</span>
+- <span data-i18n="project.humidity_accuracy">Humidity: ±3% compared to professional hygrometer</span>
+- <span data-i18n="project.pressure_accuracy">Pressure: ±0.5 hPa compared to reference weather station</span>
+- <span data-i18n="project.soil_accuracy">Soil Moisture: ±5% validated with gravimetric method</span>
 
-### Reliability Metrics
-- **Uptime**: 99.7% over 6-month field test
-- **Data Loss**: <0.1% with redundant storage systems
-- **Battery Life**: 96 hours without solar charging
-- **Weather Resistance**: Survived -20°C to +45°C conditions
+### <span data-i18n="project.reliability_metrics">Reliability Metrics</span>
+- <span data-i18n="project.uptime">Uptime: 99.7% over 6-month field test</span>
+- <span data-i18n="project.data_loss">Data Loss: <0.1% with redundant storage systems</span>
+- <span data-i18n="project.battery_life">Battery Life: 96 hours without solar charging</span>
+- <span data-i18n="project.weather_resistance">Weather Resistance: Survived -20°C to +45°C conditions</span>
 
 ## Applications
 
@@ -1163,9 +1161,7 @@ plt.show()
 - **Construction Sites**: Environmental compliance monitoring
 - **Event Planning**: Weather-dependent activity management
 
-## Future Enhancements
-
-### Hardware Improvements
+## <span data-i18n="project.future_improvements">Future Enhancements</span>
 - **LoRaWAN Integration**: Extended range communication
 - **Additional Sensors**: CO2, UV index, particulate matter
 - **Edge AI Processing**: On-device machine learning
@@ -1177,9 +1173,7 @@ plt.show()
 - **Blockchain**: Secure data provenance and sharing
 - **AR Visualization**: Augmented reality data overlay
 
-## Lessons Learned
-
-### Hardware Design
+## <span data-i18n="project.lessons_learned">Lessons Learned</span>
 1. **Waterproofing**: Cable glands are critical failure points
 2. **Power Management**: Solar charging requires MPPT for efficiency
 3. **Sensor Placement**: Wind affects temperature readings significantly
