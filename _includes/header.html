@@ -12,7 +12,8 @@
                     {% for nav_item in site.navigation %}
                     <li class="nav-item">
                         <a href="{{ nav_item.url | relative_url }}"
-                            class="nav-link {% if page.url == nav_item.url %}active{% endif %}">
+                            class="nav-link {% if page.url == nav_item.url %}active{% endif %}"
+                            {% if nav_item.title == "Home" %}data-i18n="nav.home"{% elsif nav_item.title == "Projects" %}data-i18n="nav.projects"{% elsif nav_item.title == "About" %}data-i18n="nav.about"{% endif %}>
                             {% if nav_item.title == "Home" %}{% include translate.html key="nav.home" %}{% elsif nav_item.title == "Projects" %}{% include translate.html key="nav.projects" %}{% elsif nav_item.title == "About" %}{% include translate.html key="nav.about" %}{% else %}{{ nav_item.title }}{% endif %}
                         </a>
                     </li>

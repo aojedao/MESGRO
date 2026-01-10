@@ -8,8 +8,8 @@ permalink: /projects/
 <div class="projects-showcase">
   <div class="container">
     <div class="section-header">
-      <h2>{% include translate.html key="portfolio.title" %}</h2>
-      <p class="section-subtitle">{% include translate.html key="portfolio.subtitle" %}</p>
+      <h2 data-i18n="portfolio.title">{% include translate.html key="portfolio.title" %}</h2>
+      <p class="section-subtitle" data-i18n="portfolio.subtitle">{% include translate.html key="portfolio.subtitle" %}</p>
     </div>
     
     <div class="projects-grid-featured">

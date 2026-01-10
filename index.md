@@ -7,15 +7,15 @@ layout: default
     <div class="hero-content">
       <div class="hero-info-wrapper">
         <div class="hero-text">
-           <h1 class="hero-name">{% include translate.html key="site.author_name" %}</h1>
-           <p class="hero-title">{% include translate.html key="hero.subtitle" %}</p>
+           <h1 class="hero-name" data-i18n="site.author_name">{% include translate.html key="site.author_name" %}</h1>
+           <p class="hero-title" data-i18n="hero.subtitle">{% include translate.html key="hero.subtitle" %}</p>
         </div>
         
         <div class="hero-actions">
-          <a href="{{ '/about/' | relative_url }}" class="btn-secondary">
+          <a href="{{ '/about/' | relative_url }}" class="btn-secondary" data-i18n="hero.about_btn">
             {% include translate.html key="hero.about_btn" %}
           </a>
-           <a href="mailto:{{ site.email }}" class="btn-secondary">
+           <a href="mailto:{{ site.email }}" class="btn-secondary" data-i18n="hero.contact_btn">
             {% include translate.html key="hero.contact_btn" %}
           </a>
         </div>
@@ -27,8 +27,8 @@ layout: default
 <div class="projects-showcase">
   <div class="container">
     <div class="section-header">
-      <h2>{% include translate.html key="portfolio.title" %}</h2>
-      <p class="section-subtitle">{% include translate.html key="portfolio.subtitle" %}</p>
+      <h2 data-i18n="portfolio.title">{% include translate.html key="portfolio.title" %}</h2>
+      <p class="section-subtitle" data-i18n="portfolio.subtitle">{% include translate.html key="portfolio.subtitle" %}</p>
     </div>
     
     <div class="projects-grid-featured">

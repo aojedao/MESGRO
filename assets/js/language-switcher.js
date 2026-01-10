@@ -114,9 +114,6 @@ class LanguageSwitcher {
         localStorage.setItem('language', this.currentLang);
         this.applyLanguage(this.currentLang);
         this.updateToggleText();
-        
-        // Update page content
-        this.updatePageContent();
     }
 
     updateToggleText() {
@@ -130,6 +127,7 @@ class LanguageSwitcher {
     }
 
     applyLanguage(lang) {
+        // Update all data-i18n elements
         const elements = document.querySelectorAll('[data-i18n]');
         
         elements.forEach(element => {
@@ -140,13 +138,11 @@ class LanguageSwitcher {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = translation;
                 } else {
+                    // Only update if element has content or is empty
                     element.textContent = translation;
                 }
             }
         });
-
-        // Update project content sections
-        this.updateProjectContent(lang);
 
         // Store current language in HTML element
         document.documentElement.setAttribute('lang', lang);
@@ -154,49 +150,8 @@ class LanguageSwitcher {
     }
 
     updatePageContent() {
-        // Update nav items
-        const navItems = document.querySelectorAll('.nav-link');
-        navItems.forEach(item => {
-            const text = item.textContent.trim();
-            let newText = text;
-            
-            if (text === 'Inicio' || text === 'Home') {
-                newText = this.currentLang === 'es' ? 'Inicio' : 'Home';
-            } else if (text === 'Proyectos' || text === 'Projects') {
-                newText = this.currentLang === 'es' ? 'Proyectos' : 'Projects';
-            } else if (text === 'Acerca de' || text === 'About') {
-                newText = this.currentLang === 'es' ? 'Acerca de' : 'About';
-            }
-            
-            item.textContent = newText;
-        });
-
-        // Update author name
-        const authorName = document.querySelector('.hero-name');
-        if (authorName) {
-            authorName.textContent = 'Tu Nombre';
-        }
-
-        // Update all data-i18n elements
-        const elements = document.querySelectorAll('[data-i18n]');
-        elements.forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            const translation = this.translations[this.currentLang][key];
-            
-            if (translation) {
-                element.textContent = translation;
-            }
-        });
-
-        // Update section titles
-        const sectionHeaders = document.querySelectorAll('[data-section-key]');
-        sectionHeaders.forEach(header => {
-            const key = header.getAttribute('data-section-key');
-            const translation = this.projectContent[this.currentLang][key];
-            if (translation) {
-                header.textContent = translation;
-            }
-        });
+        // This is now handled by applyLanguage
+        // Keep for backward compatibility
     }
 
     updateProjectContent(lang) {
