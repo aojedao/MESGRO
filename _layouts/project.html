@@ -11,7 +11,7 @@ layout: default
             <div class="project-meta">
                 {% if page.github_url %}
                 <a href="{{ page.github_url }}" class="btn-github" target="_blank">
-                    <i class="fab fa-github"></i> View on GitHub
+                    <i class="fab fa-github"></i> <span data-i18n="project.github">View on GitHub</span>
                 </a>
                 {% endif %}
 
@@ -38,7 +38,7 @@ layout: default
 
                 <!-- Overview / Description -->
                 <section class="project-section-clean" id="description">
-                    <h3>Overview</h3>
+                    <h3 data-i18n="project.overview">Overview</h3>
                     <div class="project-description-content">
                         <p class="project-lead">{{ page.description }}</p>
                         {{ content }}
@@ -51,7 +51,7 @@ layout: default
                 {% if page.code_files %}
                 <section class="project-section-clean" id="code">
                     <details class="code-details">
-                        <summary>Code Files</summary>
+                        <summary data-i18n="project.code">Code Files</summary>
                         <div class="code-list-container">
                             {% for code_file in page.code_files %}
                             <div class="code-file-wrapper">
@@ -89,7 +89,7 @@ layout: default
                 <!-- Components & Materials -->
                 {% if page.components %}
                 <section class="project-section-clean" id="components" style="margin-top: var(--spacing-lg);">
-                    <h3>Components & Materials</h3>
+                    <h3 data-i18n="project.components">Components & Materials</h3>
                     <table class="components-table">
                         <thead>
                             <tr>
@@ -224,7 +224,7 @@ layout: default
                 <!-- Circuit Schematics -->
                 {% if page.schematics %}
                 <section class="project-media-group" id="schematics">
-                    <h4>Schematics</h4>
+                    <h4 data-i18n="project.schematics">Schematics</h4>
                     <div class="schematics-stack">
                         {% for schematic in page.schematics %}
                         <div class="schematic-container">
@@ -265,7 +265,7 @@ layout: default
 
             <a href="{{ '/projects/' | relative_url }}" class="nav-link all-projects">
                 <i class="fas fa-th"></i>
-                <span>All Projects</span>
+                <span data-i18n="portfolio.title">All Projects</span>
             </a>
 
             {% if current_index < project_array.size %} {% assign next_project=project_array[current_index] %} <a
