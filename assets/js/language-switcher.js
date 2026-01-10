@@ -32,7 +32,12 @@ class LanguageSwitcher {
                 'project.categories': 'Categorías',
                 'project.date': 'Fecha',
                 'project.status': 'Estado',
-                'project.performance': 'Datos de Rendimiento del Sistema'
+                'project.performance': 'Datos de Rendimiento del Sistema',
+                'skills.technical_experience': 'Experiencia Técnica',
+                'skills.robotics': 'Robótica',
+                'skills.electronics': 'Electrónica',
+                'skills.programming': 'Programación',
+                'skills.cad_design': 'CAD/Diseño'
             },
             en: {
                 'nav.home': 'Home',
@@ -59,7 +64,12 @@ class LanguageSwitcher {
                 'project.categories': 'Categories',
                 'project.date': 'Date',
                 'project.status': 'Status',
-                'project.performance': 'System Performance Data'
+                'project.performance': 'System Performance Data',
+                'skills.technical_experience': 'Technical Experience',
+                'skills.robotics': 'Robotics',
+                'skills.electronics': 'Electronics',
+                'skills.programming': 'Programming',
+                'skills.cad_design': 'CAD/Design'
             }
         };
         

@@ -116,10 +116,10 @@ layout: default
 <div class="skills-section">
   <div class="container">
     <div class="skills-content">
-      <h2>Experiencia Técnica</h2>
+      <h2 data-i18n="skills.technical_experience">Experiencia Técnica</h2>
       <div class="skills-grid">
         <div class="skill-category">
-          <h3><i class="fas fa-robot"></i> Robótica</h3>
+          <h3><i class="fas fa-robot"></i> <span data-i18n="skills.robotics">Robótica</span></h3>
           <div class="skill-tags">
             <span class="skill-tag">ROS</span>
             <span class="skill-tag">Kinematics</span>
@@ -128,7 +128,7 @@ layout: default
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-microchip"></i> Electrónica</h3>
+          <h3><i class="fas fa-microchip"></i> <span data-i18n="skills.electronics">Electrónica</span></h3>
           <div class="skill-tags">
             <span class="skill-tag">Arduino</span>
             <span class="skill-tag">ESP32</span>
@@ -137,7 +137,7 @@ layout: default
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Programación</h3>
+          <h3><i class="fas fa-code"></i> <span data-i18n="skills.programming">Programación</span></h3>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
             <span class="skill-tag">C/C++</span>
@@ -146,7 +146,7 @@ layout: default
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-cube"></i> CAD/Diseño</h3>
+          <h3><i class="fas fa-cube"></i> <span data-i18n="skills.cad_design">CAD/Diseño</span></h3>
           <div class="skill-tags">
             <span class="skill-tag">SolidWorks</span>
             <span class="skill-tag">Fusion 360</span>
