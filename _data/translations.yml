@@ -40,7 +40,7 @@ es:
   site:
     title: "MESGRO - Portafolio de Robótica y Mecatrónica"
     description: "Una plantilla de código abierto para mostrar proyectos de robótica y mecatrónica con modelos 3D, esquemas y código"
-    author_name: "tu nombre"
+    author_name: "Tu Nombre"
   nav:
     home: "Inicio"
     projects: "Proyectos"

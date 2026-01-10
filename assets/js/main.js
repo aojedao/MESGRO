@@ -23,6 +23,7 @@ class MESGROApp {
     setupMobileMenu() {
         const mobileToggle = document.getElementById('mobile-menu-toggle');
         const siteNav = document.getElementById('site-nav');
+        const languageToggle = document.querySelector('.language-toggle');
         
         if (!mobileToggle || !siteNav) return;
 
@@ -32,9 +33,9 @@ class MESGROApp {
             document.body.classList.toggle('menu-open');
         });
 
-        // Close menu when clicking outside
+        // Close menu when clicking outside (but not language toggle)
         document.addEventListener('click', (e) => {
-            if (!mobileToggle.contains(e.target) && !siteNav.contains(e.target)) {
+            if (!mobileToggle.contains(e.target) && !siteNav.contains(e.target) && !languageToggle?.contains(e.target)) {
                 mobileToggle.classList.remove('active');
                 siteNav.classList.remove('active');
                 document.body.classList.remove('menu-open');
