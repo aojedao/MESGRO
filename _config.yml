@@ -1,54 +1,23 @@
 # Site settings
-title: "MESGRO - Robotics & Mechatronics Portfolio"
-description: "An open-source template for showcasing robotics and mechatronics projects with 3D models, schematics, and code"
-url: "https://aojedao.github.io"
-baseurl: "/MESGRO"
-author: "Your Name"
-email: "your.email@example.com"
-github_username: "your-github-username"
-linkedin_username: "your-linkedin"
-twitter_username: "your-twitter"
+title: "Seyi R. Afolayan — (Roboticist) Controls & Autonomy Engineer"
+description: "Controls and autonomy engineer with expertise in flight dynamics, state estimation, and real-time control systems."
+baseurl: ""  # leave empty for username.github.io
+url: "https://seyi-roboticist.github.io"
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
+# Personal info
+author:
+  name: "Seyi R. Afolayan"
+  title: "Controls & Autonomy Engineer"
+  tagline: "Flight Controls · State Estimation · Real-Time Systems"
+  email: "seyirafolayan@gmail.com"
+  github: "Seyi-roboticist"
+  linkedin: "oluwaseyi-r-afolayan-4b8330206"  # full LinkedIn slug for better linking
+  resume: "/assets/files/Seyi-Afolayan-Resume.pdf"
 
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /:collection/:name/
+# Analytics (only loaded when JEKYLL_ENV=production, i.e. the deployed site)
+analytics:
+  ga4_id: "G-X0J46MDMS9"
 
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - README.md
-  - LICENSE
-
-# Site navigation
 navigation:
   - title: "Home"
     url: "/"
@@ -57,33 +26,27 @@ navigation:
   - title: "About"
     url: "/about/"
 
-# Project categories
-project_categories:
-  - name: "Robotics"
-    slug: "robotics"
-    description: "Autonomous robots and robotic systems"
-  - name: "Mechatronics"
-    slug: "mechatronics"
-    description: "Integration of mechanical, electrical, and software systems"
-  - name: "Arduino"
-    slug: "arduino"
-    description: "Arduino-based projects and prototypes"
-  - name: "3D Printing"
-    slug: "3d-printing"
-    description: "Custom 3D printed components and designs"
-  - name: "IoT"
-    slug: "iot"
-    description: "Internet of Things devices and applications"
+# Build settings
+markdown: kramdown
+highlighter: rouge
 
-# 3D Model settings
-models:
-  supported_formats: ["stl", "obj", "gltf", "glb"]
-  default_background: "#f0f0f0"
-  camera_controls: true
-  auto_rotate: false
+# Plugins (explicit list of safe GitHub Pages-supported ones)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
 
-# Schema settings
-schematics:
-  supported_formats: ["png", "jpg", "jpeg", "svg", "pdf"]
-  zoom_enabled: true
-  pan_enabled: true
+# Collections for projects
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Defaults for project pages
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"

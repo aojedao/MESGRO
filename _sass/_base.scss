@@ -1,31 +1,142 @@
 /**
  * Base styles and CSS custom properties
- * MESGRO - Robotics & Mechatronics Portfolio Template
+ * Seyi Afolayan - Robotics Portfolio
  */
 
-/* CSS Custom Properties */
-:root {
-  /* Colors - Light Theme (Bright Blue) */
-  --primary-color: #1565c0;
-  --primary-dark: #0d47a1;
+/* ═══════════════════════════════════════════
+   THEMES
+   ═══════════════════════════════════════════ */
+
+/* ── 1. Deep Space (Default Dark) ── */
+:root,
+[data-theme="deep-space"] {
+  --primary-color: #64b5f6;
+  --primary-dark: #90caf9;
   --secondary-color: #42a5f5;
-  --accent-color: #64b5f6;
-  /* Bright Sky Blue */
-  --background-color: #ecf0f6;
+  --accent-color: #5dade2;
+  --background-color: #0f1923;
+  --surface-color: #1a2a3a;
+  --text-primary: #e3f2fd;
+  --text-secondary: #b3d9f2;
+  --text-muted: #6a9ec0;
+  --border-color: #2a4a6a;
+  --shadow-color: rgba(100, 181, 246, 0.12);
+  --shadow-hover: rgba(100, 181, 246, 0.25);
+  --code-bg: #141e2a;
+  --code-text: #b3d9f2;
+  --code-border: #2a4a6a;
+  --header-bg: rgba(15, 25, 35, 0.85);
+  --header-glow: rgba(100, 181, 246, 0.6);
+  --header-border: rgba(100, 181, 246, 0.08);
+  --nav-hover-bg: rgba(100, 181, 246, 0.06);
+  --cta-text: #0d1b2a;
+  --theme-icon: "☽";
+}
+
+/* ── 2. Obsidian Gold (Luxury Dark) ── */
+[data-theme="obsidian-gold"] {
+  --primary-color: #c5a059;
+  --primary-dark: #d4b06a;
+  --secondary-color: #a8893e;
+  --accent-color: #d4af37;
+  --background-color: #111113;
+  --surface-color: #1a1a1e;
+  --text-primary: #f0ead6;
+  --text-secondary: #a9a28e;
+  --text-muted: #6b6553;
+  --border-color: #2e2b25;
+  --shadow-color: rgba(197, 160, 89, 0.1);
+  --shadow-hover: rgba(197, 160, 89, 0.2);
+  --code-bg: #141414;
+  --code-text: #c5b78e;
+  --code-border: #2e2b25;
+  --header-bg: rgba(17, 17, 19, 0.88);
+  --header-glow: rgba(212, 175, 55, 0.5);
+  --header-border: rgba(197, 160, 89, 0.08);
+  --nav-hover-bg: rgba(197, 160, 89, 0.06);
+  --cta-text: #111113;
+  --theme-icon: "◆";
+}
+
+/* ── 3. Midnight Rose ── */
+[data-theme="midnight-rose"] {
+  --primary-color: #e8879a;
+  --primary-dark: #f0a0b0;
+  --secondary-color: #c96b7d;
+  --accent-color: #f2a3b3;
+  --background-color: #13101a;
+  --surface-color: #1e1828;
+  --text-primary: #f5eef2;
+  --text-secondary: #c4a8b5;
+  --text-muted: #7d6575;
+  --border-color: #352840;
+  --shadow-color: rgba(232, 135, 154, 0.1);
+  --shadow-hover: rgba(232, 135, 154, 0.2);
+  --code-bg: #160f1e;
+  --code-text: #d4b0bf;
+  --code-border: #352840;
+  --header-bg: rgba(19, 16, 26, 0.88);
+  --header-glow: rgba(242, 163, 179, 0.5);
+  --header-border: rgba(232, 135, 154, 0.08);
+  --nav-hover-bg: rgba(232, 135, 154, 0.06);
+  --cta-text: #13101a;
+  --theme-icon: "✿";
+}
+
+/* ── 4. Arctic (Light) ── */
+[data-theme="arctic"] {
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary-color: #3b82f6;
+  --accent-color: #60a5fa;
+  --background-color: #f8fafc;
   --surface-color: #ffffff;
-  --text-primary: #0d1b2a;
-  --text-secondary: #37474f;
-  --text-muted: #607d8b;
-  --border-color: #90caf9;
-  --shadow-color: rgba(21, 101, 192, 0.1);
-  --shadow-hover: rgba(21, 101, 192, 0.15);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --shadow-color: rgba(15, 23, 42, 0.06);
+  --shadow-hover: rgba(37, 99, 235, 0.12);
+  --code-bg: #f1f5f9;
+  --code-text: #1e293b;
+  --code-border: #e2e8f0;
+  --header-bg: rgba(248, 250, 252, 0.82);
+  --header-glow: rgba(37, 99, 235, 0.35);
+  --header-border: rgba(37, 99, 235, 0.08);
+  --nav-hover-bg: rgba(37, 99, 235, 0.05);
+  --cta-text: #ffffff;
+  --theme-icon: "☀";
+}
 
-  /* Colors - Semantic */
-  --success-color: #2d3436;
-  --warning-color: #c5a059;
-  --error-color: #a40000;
-  --info-color: #1a1a1b;
+/* ── 5. Ember (Warm Dark) ── */
+[data-theme="ember"] {
+  --primary-color: #f97316;
+  --primary-dark: #fb923c;
+  --secondary-color: #ea580c;
+  --accent-color: #fdba74;
+  --background-color: #18120e;
+  --surface-color: #231a14;
+  --text-primary: #fef3e2;
+  --text-secondary: #c9a882;
+  --text-muted: #7d6548;
+  --border-color: #3a2a1e;
+  --shadow-color: rgba(249, 115, 22, 0.1);
+  --shadow-hover: rgba(249, 115, 22, 0.2);
+  --code-bg: #1a130e;
+  --code-text: #d4a875;
+  --code-border: #3a2a1e;
+  --header-bg: rgba(24, 18, 14, 0.88);
+  --header-glow: rgba(249, 115, 22, 0.5);
+  --header-border: rgba(249, 115, 22, 0.08);
+  --nav-hover-bg: rgba(249, 115, 22, 0.06);
+  --cta-text: #18120e;
+  --theme-icon: "🔥";
+}
 
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS (shared across all themes)
+   ═══════════════════════════════════════════ */
+:root {
   /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -36,8 +147,9 @@
   --spacing-3xl: 4rem;
 
   /* Typography */
-  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-family-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  --font-family-base: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-display: 'Space Mono', 'Courier New', monospace;
+  --font-family-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
 
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -85,38 +197,66 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
+
+  /* Semantic (shared) */
+  --success-color: #22c55e;
+  --warning-color: #eab308;
+  --error-color: #ef4444;
+  --info-color: #3b82f6;
 }
 
-/* Dark Theme (Deep Space with Soft Blue Accents) */
+/* Legacy support: map old data-theme values */
 [data-theme="dark"] {
   --primary-color: #64b5f6;
   --primary-dark: #90caf9;
   --secondary-color: #42a5f5;
   --accent-color: #5dade2;
-  --background-color: #1a2332;
-  --surface-color: #243447;
+  --background-color: #0f1923;
+  --surface-color: #1a2a3a;
   --text-primary: #e3f2fd;
   --text-secondary: #b3d9f2;
-  --text-muted: #80b3d1;
-  --border-color: #3d5a7a;
-  --shadow-color: rgba(100, 181, 246, 0.2);
-  --shadow-hover: rgba(100, 181, 246, 0.3);
-
-  /* Code Blocks - Dark */
-  --code-bg: #1e2936;
-  /* VS Code Dark style */
+  --text-muted: #6a9ec0;
+  --border-color: #2a4a6a;
+  --shadow-color: rgba(100, 181, 246, 0.12);
+  --shadow-hover: rgba(100, 181, 246, 0.25);
+  --code-bg: #141e2a;
   --code-text: #b3d9f2;
-  --code-border: #3d5a7a;
+  --code-border: #2a4a6a;
+  --header-bg: rgba(15, 25, 35, 0.85);
+  --header-glow: rgba(100, 181, 246, 0.6);
+  --header-border: rgba(100, 181, 246, 0.08);
+  --nav-hover-bg: rgba(100, 181, 246, 0.06);
+  --cta-text: #0d1b2a;
 }
 
 [data-theme="light"] {
-  /* ... existing light variables ... */
-  --code-bg: #f5f5f5;
-  --code-text: #24292e;
-  --code-border: #e1e4e8;
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary-color: #3b82f6;
+  --accent-color: #60a5fa;
+  --background-color: #f8fafc;
+  --surface-color: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --shadow-color: rgba(15, 23, 42, 0.06);
+  --shadow-hover: rgba(37, 99, 235, 0.12);
+  --code-bg: #f1f5f9;
+  --code-text: #1e293b;
+  --code-border: #e2e8f0;
+  --header-bg: rgba(248, 250, 252, 0.82);
+  --header-glow: rgba(37, 99, 235, 0.35);
+  --header-border: rgba(37, 99, 235, 0.08);
+  --nav-hover-bg: rgba(37, 99, 235, 0.05);
+  --cta-text: #ffffff;
 }
 
-/* Reset and Base Styles */
+
+/* ═══════════════════════════════════════════
+   RESET & BASE STYLES
+   ═══════════════════════════════════════════ */
+
 *,
 *::before,
 *::after {
@@ -137,10 +277,25 @@ body {
   line-height: var(--line-height-normal);
   color: var(--text-primary);
   background-color: var(--background-color);
-  background-image: radial-gradient(circle at 50% 0%, var(--surface-color) 0%, var(--background-color) 70%);
-  background-attachment: fixed;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+}
+
+/* Subtle radial glow behind content */
+body::before {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 60%;
+  background: radial-gradient(ellipse, var(--surface-color) 0%, transparent 70%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+  transition: background 0.5s ease;
 }
 
 #canvas-bg {
@@ -154,42 +309,22 @@ body {
   opacity: 1;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
   margin: 0 0 var(--spacing-md) 0;
-  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-display);
+  font-weight: 700;
   line-height: var(--line-height-tight);
   color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
-h1 {
-  font-size: var(--font-size-4xl);
-}
-
-h2 {
-  font-size: var(--font-size-3xl);
-}
-
-h3 {
-  font-size: var(--font-size-2xl);
-}
-
-h4 {
-  font-size: var(--font-size-xl);
-}
-
-h5 {
-  font-size: var(--font-size-lg);
-}
-
-h6 {
-  font-size: var(--font-size-base);
-}
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
 
 p {
   margin: 0 0 var(--spacing-md) 0;
@@ -206,9 +341,8 @@ a:hover {
   color: var(--primary-dark);
 }
 
-/* Lists */
-ul,
-ol {
+/* ── Lists ── */
+ul, ol {
   margin: 0 0 var(--spacing-md) 0;
   padding-left: var(--spacing-lg);
 }
@@ -218,7 +352,7 @@ li {
   color: var(--text-secondary);
 }
 
-/* Code */
+/* ── Code ── */
 code {
   font-family: var(--font-family-mono);
   font-size: 0.875em;
@@ -252,18 +386,15 @@ pre code {
   box-shadow: none;
 }
 
-/* Images */
+/* ── Images ── */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Forms */
-input,
-textarea,
-select,
-button {
+/* ── Forms ── */
+input, textarea, select, button {
   font-family: inherit;
   font-size: inherit;
 }
@@ -275,76 +406,35 @@ button {
   padding: 0;
 }
 
-/* Utility Classes */
+/* ═══════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════ */
+
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }
 
-.text-center {
-  text-align: center;
-}
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
 
-.text-left {
-  text-align: left;
-}
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
 
-.text-right {
-  text-align: right;
-}
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
 
-.font-light {
-  font-weight: var(--font-weight-light);
-}
-
-.font-normal {
-  font-weight: var(--font-weight-normal);
-}
-
-.font-medium {
-  font-weight: var(--font-weight-medium);
-}
-
-.font-semibold {
-  font-weight: var(--font-weight-semibold);
-}
-
-.font-bold {
-  font-weight: var(--font-weight-bold);
-}
-
-.text-xs {
-  font-size: var(--font-size-xs);
-}
-
-.text-sm {
-  font-size: var(--font-size-sm);
-}
-
-.text-base {
-  font-size: var(--font-size-base);
-}
-
-.text-lg {
-  font-size: var(--font-size-lg);
-}
-
-.text-xl {
-  font-size: var(--font-size-xl);
-}
-
-.text-primary {
-  color: var(--text-primary);
-}
-
-.text-secondary {
-  color: var(--text-secondary);
-}
-
-.text-muted {
-  color: var(--text-muted);
-}
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
 
 .sr-only {
   position: absolute;

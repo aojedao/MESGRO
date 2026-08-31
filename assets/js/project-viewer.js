@@ -277,43 +277,36 @@ class ProjectViewer {
      * Convert project description headers into collapsible sections
      */
     setupCollapsibleSections() {
-        // Find the main content container
         const contentContainer = document.querySelector('.project-description-content');
         if (!contentContainer) return;
 
-        // Get all H2 and H3 elements that haven't been processed
-        // We exclude elements already inside a details tag
-        // AND exclude specific sections like "Overview" or "Introduction" if requested
+        // Sections that should never be collapsible
+        const excludeSections = ['overview', 'introduction', 'description'];
+
+        // Sections that are collapsible but start expanded
+        const openByDefault = ['demo', 'demos', 'system architecture', 'sensor fusion'];
+
         const headers = Array.from(contentContainer.querySelectorAll('h2, h3')).filter(
             header => {
                 const text = header.textContent.trim().toLowerCase();
                 return !header.closest('details') &&
-                    text !== 'overview' &&
-                    text !== 'introduction' &&
-                    text !== 'description';
+                    !excludeSections.includes(text);
             }
         );
 
-        let firstSection = true;
-
         headers.forEach(header => {
-            // Create details structure
             const details = document.createElement('details');
             details.className = 'section-details';
 
-            // Open the first section by default
-            if (firstSection) {
+            // Open by default if section name matches
+            const headerText = header.textContent.trim().toLowerCase();
+            if (openByDefault.includes(headerText)) {
                 details.open = true;
-                firstSection = false;
             }
 
             const summary = document.createElement('summary');
             summary.className = 'section-summary';
-            summary.textContent = header.textContent; // Transfer text
-
-            // Move original header content to summary and replace header
-            // Actually better to keep header styling? No, summary replaces the header visual.
-            // Let's make summary look decent.
+            summary.textContent = header.textContent;
 
             details.appendChild(summary);
 

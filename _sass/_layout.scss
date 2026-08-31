@@ -1,6 +1,6 @@
 /**
  * Layout styles - Header, Footer, Navigation
- * MESGRO - Robotics & Mechatronics Portfolio Template
+ * Seyi Afolayan - Robotics Portfolio
  */
 
 /* Header */
@@ -10,10 +10,37 @@
   left: 0;
   right: 0;
   height: var(--header-height);
-  background-color: var(--background-color);
-  border-bottom: 1px solid var(--border-color);
+  background: var(--header-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--header-border);
   z-index: var(--z-fixed);
-  transition: all var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header.scrolled {
+  background: var(--header-bg);
+  border-bottom-color: var(--border-color);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Top accent glow */
+.header-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 15%,
+    var(--header-glow) 50%,
+    transparent 85%,
+    transparent 100%
+  );
+  opacity: 0.8;
+  transition: background 0.5s ease;
 }
 
 .header-content {
@@ -23,6 +50,7 @@
   height: 100%;
 }
 
+/* Brand */
 .site-brand {
   display: flex;
   align-items: center;
@@ -31,17 +59,26 @@
 .brand-link {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
+  gap: 0.75rem;
   text-decoration: none;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.brand-link:hover {
+  transform: translateX(2px);
 }
 
 .brand-text {
+  font-family: var(--font-family-display);
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.brand-link:hover .brand-text {
+  color: var(--accent-color);
 }
 
 /* Navigation */
@@ -56,7 +93,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: var(--spacing-lg);
+  gap: 0.25rem;
 }
 
 .nav-item {
@@ -70,54 +107,120 @@ a.nav-link {
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
-  font-weight: var(--font-weight-medium);
-  padding: var(--spacing-md) 0;
+  font-family: var(--font-family-mono);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
   text-align: center;
   text-decoration: none;
-  font-size: var(--font-size-xs);
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: all var(--transition-fast);
+  letter-spacing: 0.06em;
+  border-radius: 6px;
+  transition: all 0.25s ease;
 }
 
-a.nav-link:hover,
+a.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 1px;
+  transform: translateX(-50%);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a.nav-link:hover {
+  color: var(--text-primary);
+  background: var(--nav-hover-bg);
+}
+
+a.nav-link:hover::after {
+  width: 60%;
+}
+
 a.nav-link.active {
   color: var(--accent-color);
 }
 
 a.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: var(--accent-color);
-  border-radius: var(--radius-full);
+  width: 60%;
+  opacity: 1;
 }
 
 /* Header Actions */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: 0.75rem;
 }
 
+/* CTA Button */
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.1rem;
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--cta-text);
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.header-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px var(--shadow-hover);
+  filter: brightness(1.1);
+  color: var(--cta-text);
+}
+
+/* Theme Toggle */
 .theme-toggle {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
+  gap: 0.4rem;
+  height: 36px;
+  padding: 0 0.65rem;
+  border-radius: 8px;
   background-color: transparent;
   color: var(--text-secondary);
-  transition: all var(--transition-fast);
+  border: 1px solid var(--border-color);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .theme-toggle:hover {
-  background-color: var(--surface-color);
-  color: var(--primary-color);
+  background: var(--nav-hover-bg);
+  color: var(--accent-color);
+  border-color: var(--primary-color);
+}
+
+.theme-toggle-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(30deg);
+}
+
+.theme-toggle-label {
+  font-family: var(--font-family-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
 }
 
 /* Mobile Menu Toggle */
@@ -128,6 +231,8 @@ a.nav-link.active::after {
   width: 40px;
   height: 40px;
   background: transparent;
+  border: none;
+  cursor: pointer;
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
 }
@@ -161,7 +266,7 @@ a.nav-link.active::after {
 
 /* Footer */
 .site-footer {
-  background: linear-gradient(180deg, var(--surface-color) 0%, #0a0a0a 100%);
+  background: linear-gradient(180deg, var(--surface-color) 0%, var(--background-color) 100%);
   border-top: 2px solid var(--border-color);
   margin-top: var(--spacing-3xl);
   padding: var(--spacing-3xl) 0;
@@ -199,24 +304,23 @@ a.nav-link.active::after {
 }
 
 .mesgro-title {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: var(--font-family-display);
   font-size: 2.5rem;
-  letter-spacing: 0.2em;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
-  text-transform: uppercase;
-  background: linear-gradient(45deg, var(--text-primary), var(--text-secondary));
+  background: linear-gradient(45deg, var(--text-primary), var(--accent-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .mesgro-definition {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-mono);
   color: var(--text-muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.6;
 }
@@ -224,8 +328,6 @@ a.nav-link.active::after {
 .def-highlight {
   color: var(--primary-color);
   font-weight: 800;
-  /* font-family: 'JetBrains Mono', monospace; */
-  /* Removed to fix alignment */
 }
 
 .social-links-center {

@@ -9,13 +9,23 @@
     display: flex;
   }
 
+  .header-cta {
+    display: none;
+  }
+
+  .theme-toggle-label {
+    display: none;
+  }
+
   .site-nav {
     position: fixed;
     top: var(--header-height);
     left: 0;
     right: 0;
-    background-color: var(--background-color);
-    border-bottom: 1px solid var(--border-color);
+    background: var(--header-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--header-border);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;

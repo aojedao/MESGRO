@@ -1,30 +1,48 @@
-<header class="site-header">
+<header class="site-header" id="site-header">
+    <div class="header-glow"></div>
     <div class="container">
         <div class="header-content">
             <div class="site-brand">
                 <a href="{{ '/' | relative_url }}" class="brand-link">
-                    <span class="brand-text">{{ site.title | split: ' ' | first }}</span>
+                    <span class="brand-icon">S</span>
+                    <span class="brand-text">Seyi Afolayan</span>
                 </a>
             </div>
-
             <nav class="site-nav" id="site-nav">
                 <ul class="nav-list">
                     {% for nav_item in site.navigation %}
                     <li class="nav-item">
+                        {% if nav_item.url == "/" %}
                         <a href="{{ nav_item.url | relative_url }}"
-                            class="nav-link {% if page.url == nav_item.url %}active{% endif %}">
+                            class="nav-link {% if page.url == '/' %}active{% endif %}">
                             {{ nav_item.title }}
                         </a>
+                        {% else %}
+                        <a href="{{ nav_item.url | relative_url }}"
+                            class="nav-link {% if page.url contains nav_item.url %}active{% endif %}">
+                            {{ nav_item.title }}
+                        </a>
+                        {% endif %}
                     </li>
                     {% endfor %}
                 </ul>
             </nav>
-
             <div class="header-actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
+                {% if site.author.resume %}
+                <a href="{{ site.author.resume | relative_url }}" class="header-resume" target="_blank"
+                    rel="noopener" data-track="resume" data-track-location="header">
+                    <i class="fas fa-file-lines"></i>
+                    <span>Resume</span>
+                </a>
+                {% endif %}
+                <a href="mailto:{{ site.author.email }}" class="header-cta" data-track="email"
+                    data-track-location="header">
+                    Get in Touch
+                </a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Change theme" title="Change theme">
+                    <span class="theme-toggle-icon"></span>
+                    <span class="theme-toggle-label"></span>
                 </button>
-
                 <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -34,3 +52,58 @@
         </div>
     </div>
 </header>
+<style>
+/* Brand icon monogram */
+.brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    font-family: var(--font-family-display);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-link:hover .brand-icon {
+    transform: rotate(-6deg) scale(1.08);
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.4);
+}
+/* Resume link in the header actions */
+.header-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.header-resume:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+    .header-resume span { display: none; }
+    .header-resume { padding: 0.45rem 0.6rem; }
+}
+/* Active nav pill style */
+a.nav-link.active {
+    color: var(--accent-color);
+    background: rgba(99, 102, 241, 0.08);
+}
+a.nav-link.active::after {
+    width: 60%;
+    opacity: 1;
+}
+</style>

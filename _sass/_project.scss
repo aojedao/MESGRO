@@ -1110,3 +1110,18 @@ details.section-details .section-content {
   color: var(--text-secondary);
   line-height: 1.6;
 }
+/* Inline video figures (converted from GIF -- see assets/images/projects/*) */
+.project-video {
+    margin: 2rem 0;
+
+    video {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    }
+}

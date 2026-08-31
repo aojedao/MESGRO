@@ -32,215 +32,105 @@ layout: default
             <h1 class="project-title-simple">{{ page.title }}</h1>
         </div>
 
-        <div class="project-split-layout">
-            <!-- Left Column: Text & Info -->
-            <div class="project-left-panel">
+        <div class="project-left-panel" style="max-width: 100%; width: 100%;">
 
-                <!-- Overview / Description -->
-                <section class="project-section-clean" id="description">
-                    <h3>Overview</h3>
-                    <div class="project-description-content">
-                        <p class="project-lead">{{ page.description }}</p>
-                        {{ content }}
-                    </div>
-                </section>
+            <!-- Overview / Description -->
+            <section class="project-section-clean" id="description">
+                <h3>Overview</h3>
+                <div class="project-description-content">
+                    <p class="project-lead">{{ page.description }}</p>
+                    {{ content }}
+                </div>
+            </section>
 
-
-
-                <!-- Code Section (Collapsible) -->
-                {% if page.code_files %}
-                <section class="project-section-clean" id="code">
-                    <details class="code-details">
-                        <summary>Code Files</summary>
-                        <div class="code-list-container">
-                            {% for code_file in page.code_files %}
-                            <div class="code-file-wrapper">
-                                {% if code_file.content %}
-                                <details class="code-file-details">
-                                    <summary class="code-file-summary">
-                                        <span class="file-name"><i class="fas fa-code"></i> {{ code_file.name }}</span>
-                                        <div class="file-meta">
-                                            <span class="lang-tag">{{ code_file.language }}</span>
-                                            {% if code_file.download_url %}
-                                            <a href="{{ code_file.download_url }}" class="file-download-icon" download
-                                                title="Download"><i class="fas fa-download"></i></a>
-                                            {% endif %}
-                                        </div>
-                                    </summary>
-                                    <div class="code-block-content">
-                                        <pre><code class="language-{{ code_file.language }}">{{ code_file.content | escape }}</code></pre>
+            <!-- Code Section (Collapsible) -->
+            {% if page.code_files %}
+            <section class="project-section-clean" id="code">
+                <details class="code-details">
+                    <summary>Code Files</summary>
+                    <div class="code-list-container">
+                        {% for code_file in page.code_files %}
+                        <div class="code-file-wrapper">
+                            {% if code_file.content %}
+                            <details class="code-file-details">
+                                <summary class="code-file-summary">
+                                    <span class="file-name"><i class="fas fa-code"></i> {{ code_file.name }}</span>
+                                    <div class="file-meta">
+                                        <span class="lang-tag">{{ code_file.language }}</span>
+                                        {% if code_file.download_url %}
+                                        <a href="{{ code_file.download_url }}" class="file-download-icon" download
+                                            title="Download"><i class="fas fa-download"></i></a>
+                                        {% endif %}
                                     </div>
-                                </details>
-                                {% else %}
-                                <div class="code-file-item">
-                                    <i class="fas fa-code"></i> {{ code_file.name }}
-                                    {% if code_file.download_url %}
-                                    <a href="{{ code_file.download_url }}" download><i class="fas fa-download"></i></a>
-                                    {% endif %}
+                                </summary>
+                                <div class="code-block-content">
+                                    <pre><code class="language-{{ code_file.language }}">{{ code_file.content | escape }}</code></pre>
                                 </div>
+                            </details>
+                            {% else %}
+                            <div class="code-file-item">
+                                <i class="fas fa-code"></i> {{ code_file.name }}
+                                {% if code_file.download_url %}
+                                <a href="{{ code_file.download_url }}" download><i class="fas fa-download"></i></a>
                                 {% endif %}
                             </div>
-                            {% endfor %}
-                        </div>
-                    </details>
-                </section>
-                {% endif %}
-
-                <!-- Components & Materials -->
-                {% if page.components %}
-                <section class="project-section-clean" id="components" style="margin-top: var(--spacing-lg);">
-                    <h3>Components & Materials</h3>
-                    <table class="components-table">
-                        <thead>
-                            <tr>
-                                <th>Component</th>
-                                <th>Qty</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for component in page.components %}
-                            <tr>
-                                <td>{{ component.name }}</td>
-                                <td class="component-qty">{% if component.quantity %}x{{ component.quantity }}{% endif
-                                    %}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </section>
-                {% endif %}
-
-                <!-- Meta / Actions (Moved to bottom of left) -->
-                <div class="project-meta-bottom">
-
-                    <div class="project-actions-small">
-                        {% if page.github_url %}
-                        <a href="{{ page.github_url }}" class="btn-small" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        {% endif %}
-
-                        {% if page.demo_url %}
-                        <a href="{{ page.demo_url }}" class="btn-small" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                        {% endif %}
-                    </div>
-
-                    <div class="project-categories-bottom">
-                        {% for category in page.categories %}
-                        <span class="category-tag-small">{{ category }}</span>
-                        {% endfor %}
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Right Column: Media -->
-            <div class="project-right-panel">
-
-
-
-                <!-- 3D Models Section -->
-                {% if page.models %}
-                <section class="project-media-group" id="models">
-                    <div class="models-grid-compact">
-                        {% for model in page.models %}
-                        <div class="model-viewer-container">
-                            <model-viewer src="{{ model.file | relative_url }}"
-                                alt="{{ model.description | default: page.title }}" camera-controls
-                                auto-rotate="{{ site.models.auto_rotate | default: false }}"
-                                background-color="{{ site.models.default_background | default: '#f0f0f0' }}"
-                                shadow-intensity="1" class="model-viewer">
-                            </model-viewer>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </section>
-                {% endif %}
-
-                <!-- Media Gallery -->
-                {% if page.gallery %}
-                <section class="project-media-group" id="gallery">
-                    <div class="media-gallery-stack">
-                        {% for media in page.gallery %}
-                        <div class="media-item">
-                            {% assign file_extension = media.file | split: '.' | last | downcase %}
-                            {% if file_extension == 'mp4' or file_extension == 'webm' or file_extension == 'avi' %}
-                            <video controls class="gallery-video">
-                                <source src="{{ media.file | relative_url }}" type="video/{{ file_extension }}">
-                                Your browser does not support the video tag.
-                            </video>
-                            {% else %}
-                            <img src="{{ media.file | relative_url }}"
-                                alt="{{ media.description | default: page.title }}" class="gallery-image" data-zoomable>
-                            {% endif %}
-                            {% if media.description %}
-                            <p class="media-caption">{{ media.description }}</p>
                             {% endif %}
                         </div>
                         {% endfor %}
                     </div>
-                </section>
-                {% endif %}
-
-                <!-- Visualizations (Interactive HTML Plots) -->
-                {% if page.visualizations %}
-                <section class="project-media-group" id="visualizations">
-                    <h4 style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-sm); margin: 0 0 var(--spacing-md) 0;">Data Visualizations</h4>
-                    <div class="visualizations-stack">
-                        {% for viz in page.visualizations %}
-                        <div class="visualization-item" style="margin-bottom: var(--spacing-lg); padding: var(--spacing-md); background: var(--surface-color); border-left: 4px solid var(--accent-color); border-radius: var(--radius-lg);">
-                            <h5 style="margin-top: 0; margin-bottom: var(--spacing-sm); font-size: 1rem; color: var(--text-primary); font-weight: 600; letter-spacing: 0.05em;">{{ viz.description }}</h5>
-                            <iframe src="{{ viz.file | relative_url }}"
-                                style="width: 100%; height: 600px; border: 1px solid var(--border-color); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
-                                title="{{ viz.description }}"></iframe>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </section>
-                {% endif %}
-
-                <!-- Plotly for custom plots -->
-                {% if page.custom_plot %}
-                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-                {% endif %}
-
-                <!-- Interactive Data Plot (only if page has interactive_plot: true) -->
-                {% if page.interactive_plot %}
-                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-                <div class="project-media-group">
-                    {% include interactive-plot.html %}
-                </div>
-                {% endif %}
-
-                <!-- Custom Plot Include -->
-                {% if page.custom_plot %}
-                <div class="project-media-group">
-                    {% include {{ page.custom_plot }} %}
-                </div>
-                {% endif %}
-
-                <!-- Circuit Schematics -->
-                {% if page.schematics %}
-                <section class="project-media-group" id="schematics">
-                    <h4>Schematics</h4>
-                    <div class="schematics-stack">
-                        {% for schematic in page.schematics %}
-                        <div class="schematic-container">
-                            <img src="{{ schematic.file | relative_url }}"
-                                alt="{{ schematic.description | default: 'Circuit Schematic' }}"
-                                class="schematic-image">
-                        </div>
-                        {% endfor %}
-                    </div>
-            </div>
+                </details>
             </section>
             {% endif %}
 
+            <!-- Components & Materials -->
+            {% if page.components %}
+            <section class="project-section-clean" id="components" style="margin-top: var(--spacing-lg);">
+                <h3>Components & Materials</h3>
+                <table class="components-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for component in page.components %}
+                        <tr>
+                            <td>{{ component.name }}</td>
+                            <td class="component-qty">{% if component.quantity %}x{{ component.quantity }}{% endif
+                                %}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+            {% endif %}
+
+            <!-- Meta / Actions -->
+            <div class="project-meta-bottom">
+                <div class="project-actions-small">
+                    {% if page.github_url %}
+                    <a href="{{ page.github_url }}" class="btn-small" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    {% endif %}
+
+                    {% if page.demo_url %}
+                    <a href="{{ page.demo_url }}" class="btn-small" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Demo
+                    </a>
+                    {% endif %}
+                </div>
+
+                <div class="project-categories-bottom">
+                    {% for category in page.categories %}
+                    <span class="category-tag-small">{{ category }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
 </div>
 
 <!-- Project Navigation -->

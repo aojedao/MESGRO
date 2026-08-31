@@ -1,7 +1,0 @@
-.title KiCad schematic
-R1 IN Net-_C1-Pad1_ 10k
-R2 Net-_C1-Pad1_ OUT 1k
-V1 IN GND DC 2 
-C2 OUT GND 100n
-C1 Net-_C1-Pad1_ GND 1u
-.end

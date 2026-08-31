@@ -59,46 +59,59 @@ class MESGROApp {
      */
     setupThemeToggle() {
         const themeToggle = document.getElementById('theme-toggle');
-        // Allow for the icon to be finding more flexibly
-        const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
         
         if (!themeToggle) {
             console.warn('Theme toggle button not found');
             return;
         }
 
-        // Check for saved theme preference or default to 'dark'
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        
-        // Function to update icon
-        const updateIcon = (theme) => {
-            if (!themeIcon) return;
-            
-            // Remove both potentially to be safe
-            themeIcon.classList.remove('fa-moon', 'fa-sun');
-            
-            if (theme === 'dark') {
-                themeIcon.classList.add('fa-sun'); // Sun icon for dark mode (switch to light)
-            } else {
-                themeIcon.classList.add('fa-moon'); // Moon icon for light mode (switch to dark)
-            }
+        const iconEl = themeToggle.querySelector('.theme-toggle-icon');
+        const labelEl = themeToggle.querySelector('.theme-toggle-label');
+
+        // Theme definitions: [id, label, icon]
+        const themes = [
+            ['deep-space',     'Space',   '☽'],
+            ['obsidian-gold',  'Gold',    '◆'],
+            ['midnight-rose',  'Rose',    '✿'],
+            ['arctic',         'Arctic',  '☀'],
+            ['ember',          'Ember',   '⬡'],
+        ];
+
+        // Find current theme index
+        const getIndex = (id) => {
+            const idx = themes.findIndex(t => t[0] === id);
+            return idx >= 0 ? idx : 0;
         };
 
-        // Initial icon update
-        updateIcon(savedTheme);
+        // Apply theme
+        const applyTheme = (idx) => {
+            const [id, label, icon] = themes[idx];
+            document.documentElement.setAttribute('data-theme', id);
+            localStorage.setItem('theme', id);
+            if (iconEl) iconEl.textContent = icon;
+            if (labelEl) labelEl.textContent = label;
+        };
 
-        // Toggle theme on button click
+        // Load saved or default
+        const saved = localStorage.getItem('theme') || 'deep-space';
+        // Migrate old values
+        let startIdx;
+        if (saved === 'dark') startIdx = 0;
+        else if (saved === 'light') startIdx = 3;
+        else startIdx = getIndex(saved);
+
+        applyTheme(startIdx);
+
+        // Cycle on click
         themeToggle.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent any default button behavior
-            
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            updateIcon(newTheme);
+            e.preventDefault();
+            const current = document.documentElement.getAttribute('data-theme');
+            const nextIdx = (getIndex(current) + 1) % themes.length;
+            applyTheme(nextIdx);
+
+            // Brief animation
+            themeToggle.style.transform = 'scale(0.9)';
+            setTimeout(() => { themeToggle.style.transform = ''; }, 150);
         });
     }
 
@@ -135,12 +148,21 @@ class MESGROApp {
         scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
         document.body.appendChild(scrollToTopBtn);
 
-        // Show/hide button based on scroll position
+        // Show/hide button based on scroll position + header effect
+        const siteHeader = document.getElementById('site-header');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 scrollToTopBtn.classList.add('visible');
             } else {
                 scrollToTopBtn.classList.remove('visible');
+            }
+            // Header glassmorphism intensifies on scroll
+            if (siteHeader) {
+                if (window.pageYOffset > 50) {
+                    siteHeader.classList.add('scrolled');
+                } else {
+                    siteHeader.classList.remove('scrolled');
+                }
             }
         });
 
@@ -279,15 +301,116 @@ document.addEventListener('DOMContentLoaded', () => {
 // Make Utils available globally
 window.MESGROUtils = Utils;
 
-// Service Worker registration for PWA capabilities (optional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-                console.log('SW registered: ', registration);
-            })
-            .catch(registrationError => {
-                console.log('SW registration failed: ', registrationError);
+
+/* ============================================================
+   Visitor analytics
+   Sends structured events to GA4 (loaded in _includes/analytics.html).
+   Every call is a no-op when gtag is absent -- e.g. local development,
+   or a visitor running an ad blocker -- so nothing here can break the page.
+   ============================================================ */
+const Analytics = (() => {
+    // Local throttle -- Utils exposes debounce, which is the wrong shape for
+    // scroll milestones (we want the leading edge, at a bounded rate).
+    const throttle = (fn, wait) => {
+        let last = 0;
+        return (...args) => {
+            const now = Date.now();
+            if (now - last < wait) return;
+            last = now;
+            fn(...args);
+        };
+    };
+
+    const send = (name, params = {}) => {
+        if (typeof window.gtag !== 'function') return;
+        window.gtag('event', name, params);
+    };
+
+    // Resume downloads, mail clicks, and any other element carrying data-track
+    const trackTaggedLinks = () => {
+        document.querySelectorAll('[data-track]').forEach(el => {
+            el.addEventListener('click', () => {
+                const kind = el.dataset.track;
+                send(kind === 'resume' ? 'resume_download' : `${kind}_click`, {
+                    link_location: el.dataset.trackLocation || 'unknown',
+                    page_path: window.location.pathname
+                });
             });
-    });
-}
+        });
+    };
+
+    // Clicks that leave the site: GitHub repos, LinkedIn, papers
+    const trackOutboundLinks = () => {
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            if (link.hostname === window.location.hostname) return;
+            if (link.hasAttribute('data-track')) return; // already covered above
+            link.addEventListener('click', () => {
+                send('outbound_click', {
+                    link_domain: link.hostname,
+                    link_url: link.href,
+                    page_path: window.location.pathname
+                });
+            });
+        });
+    };
+
+    // Which projects actually get opened, and from where
+    const trackProjectCards = () => {
+        document.querySelectorAll('a[href*="/projects/"]').forEach(link => {
+            const slug = link.getAttribute('href').split('/').filter(Boolean).pop();
+            if (!slug || slug === 'projects') return;
+            link.addEventListener('click', () => {
+                send('project_open', { project_slug: slug, from_page: window.location.pathname });
+            });
+        });
+    };
+
+    // How far down a page people actually get -- the honest read on whether
+    // a project write-up is holding attention
+    const trackScrollDepth = () => {
+        const milestones = [25, 50, 75, 100];
+        const fired = new Set();
+        const onScroll = throttle(() => {
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            if (scrollable <= 0) return;
+            const pct = Math.round((window.scrollY / scrollable) * 100);
+            milestones.forEach(m => {
+                if (pct >= m && !fired.has(m)) {
+                    fired.add(m);
+                    send('scroll_depth', { percent_scrolled: m, page_path: window.location.pathname });
+                }
+            });
+        }, 500);
+        window.addEventListener('scroll', onScroll, { passive: true });
+    };
+
+    // Time actually spent on the page, reported once on the way out
+    const trackTimeOnPage = () => {
+        const start = Date.now();
+        let reported = false;
+        const report = () => {
+            if (reported) return;
+            reported = true;
+            const seconds = Math.round((Date.now() - start) / 1000);
+            if (seconds < 3) return; // ignore bounces and prefetches
+            send('time_on_page', { seconds_on_page: seconds, page_path: window.location.pathname });
+        };
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') report();
+        });
+        window.addEventListener('pagehide', report);
+    };
+
+    const init = () => {
+        trackTaggedLinks();
+        trackOutboundLinks();
+        trackProjectCards();
+        trackScrollDepth();
+        trackTimeOnPage();
+    };
+
+    return { init, send };
+})();
+
+document.addEventListener('DOMContentLoaded', () => Analytics.init());
+window.Analytics = Analytics;

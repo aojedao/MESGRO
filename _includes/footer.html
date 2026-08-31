@@ -2,43 +2,39 @@
     <div class="container">
         <div class="footer-simple">
             <div class="footer-brand">
-                <h3 class="mesgro-title">MESGRO</h3>
+                <h3 class="mesgro-title">Seyi Afolayan</h3>
                 <div class="mesgro-definition">
-                    <span class="def-highlight">M</span>echanical,
-                    <span class="def-highlight">E</span>lectronics &
-                    <span class="def-highlight">S</span>oftware
-                    <span class="def-highlight">G</span>allery for
-                    <span class="def-highlight">RO</span>botics
+                    Full-Stack Roboticist
                 </div>
             </div>
 
             <div class="social-links-center">
-                {% if site.github_username %}
-                <a href="https://github.com/{{ site.github_username }}" target="_blank" aria-label="GitHub">
+                {% if site.author.github %}
+                <a href="https://github.com/{{ site.author.github }}" target="_blank" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
                 {% endif %}
-                {% if site.linkedin_username %}
-                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" aria-label="LinkedIn">
+                {% if site.author.linkedin %}
+                <a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 {% endif %}
-                {% if site.twitter_username %}
-                <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
+                {% if site.author.email %}
+                <a href="mailto:{{ site.author.email }}" aria-label="Email" data-track="email"
+                    data-track-location="footer">
+                    <i class="fas fa-envelope"></i>
                 </a>
                 {% endif %}
-                {% if site.email %}
-                <a href="mailto:{{ site.email }}" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
+                {% if site.author.resume %}
+                <a href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener"
+                    aria-label="Resume" data-track="resume" data-track-location="footer">
+                    <i class="fas fa-file-lines"></i>
                 </a>
                 {% endif %}
             </div>
 
             <div class="footer-credits">
-                <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author | default: site.title }}. Built with &hearts; using Jekyll.</p>
-                <p>Designed and developed by <strong>Alejandro Ojeda Olarte</strong></p>
-                <p><a href="https://github.com/aojedao/MESGRO" target="_blank">MESGRO Template</a></p>
+                <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name | default: site.title }}. Built with &hearts; using Jekyll.</p>
             </div>
         </div>
     </div>
