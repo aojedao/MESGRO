@@ -4,7 +4,7 @@ title: "Mobile Manipulation with Quadratic Programming"
 description: "Building a full-stack ROS 2 mobile manipulation system from scratch. Clearpath Husky A200 base, Universal Robots UR5e arm, and Robotiq 2F-85 gripper controlled through a unified QP-based whole-body motion planner that coordinates the base and arm simultaneously. Modular xacro architecture with sim-to-real transfer via ros2_control. Status: ongoing."
 date: 2025-02-01
 categories: [Mobile Robotics, Manipulation, Motion Planning, ROS2, C++, Python]
-featured_image: "/assets/images/projects/mobile-manipulation-qp/featured.png"
+# featured_image: "/assets/images/projects/mobile-manipulation-qp/featured.png"  # TODO: add this image; the file has never existed, so the card rendered a broken <img>
 github_url: "https://github.com/Seyi-roboticist/mobile_manipulation_qp"
 
 code_files:

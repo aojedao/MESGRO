@@ -122,8 +122,12 @@ title: Home
           </div>
 
           <div class="hero-actions">
-            <a href="{{ '/about/' | relative_url }}" class="btn-primary">About Me</a>
-            <a href="{{ '/projects/' | relative_url }}" class="btn-secondary">View Projects</a>
+            <a href="{{ '/projects/' | relative_url }}" class="btn-primary">View Projects</a>
+            {% if site.author.resume %}
+            <a href="{{ site.author.resume | relative_url }}" class="btn-secondary" target="_blank"
+              rel="noopener" data-track="resume" data-track-location="hero">Download Resume</a>
+            {% endif %}
+            <a href="{{ '/about/' | relative_url }}" class="btn-secondary">About Me</a>
           </div>
         </div>
       </div>

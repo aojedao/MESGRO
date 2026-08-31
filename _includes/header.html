@@ -1,12 +1,3 @@
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X0J46MDMS9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-X0J46MDMS9');
-</script>
-
 <header class="site-header" id="site-header">
     <div class="header-glow"></div>
     <div class="container">
@@ -37,7 +28,15 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <a href="mailto:{{ site.author.email }}" target="_blank" class="header-cta">
+                {% if site.author.resume %}
+                <a href="{{ site.author.resume | relative_url }}" class="header-resume" target="_blank"
+                    rel="noopener" data-track="resume" data-track-location="header">
+                    <i class="fas fa-file-lines"></i>
+                    <span>Resume</span>
+                </a>
+                {% endif %}
+                <a href="mailto:{{ site.author.email }}" class="header-cta" data-track="email"
+                    data-track-location="header">
                     Get in Touch
                 </a>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Change theme" title="Change theme">
@@ -74,6 +73,29 @@
 .brand-link:hover .brand-icon {
     transform: rotate(-6deg) scale(1.08);
     box-shadow: 0 2px 12px rgba(99, 102, 241, 0.4);
+}
+/* Resume link in the header actions */
+.header-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.header-resume:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+    .header-resume span { display: none; }
+    .header-resume { padding: 0.45rem 0.6rem; }
 }
 /* Active nav pill style */
 a.nav-link.active {

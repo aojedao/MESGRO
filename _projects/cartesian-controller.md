@@ -5,7 +5,7 @@ description: "A three-package ROS 2 control framework for real-time end-effector
 status: completed
 date: 2025-10-01
 categories: [Manipulation, Controls, Xacro, ROS2, C++, Python]
-featured_image: "/assets/images/projects/cartesian-controller/ur5_control.gif"
+featured_image: "/assets/images/projects/cartesian-controller/ur5_control-poster.webp"
 github_url: "https://github.com/Seyi-roboticist/_controller_"
 demo_url: "https://www.youtube.com/watch?v=lPNE6-0R59k"
 

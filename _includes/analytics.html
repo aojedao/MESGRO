@@ -1,0 +1,14 @@
+{% if jekyll.environment == "production" and site.analytics.ga4_id %}
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.analytics.ga4_id }}', {
+    // Group hits by section so the Projects funnel is readable in reports
+    content_group: '{% if page.layout == "project" %}project{% elsif page.url == "/" %}home{% else %}{{ page.url | remove: "/" | default: "page" }}{% endif %}',
+    page_title: '{{ page.title | default: site.title | escape }}'
+  });
+</script>
+{% endif %}

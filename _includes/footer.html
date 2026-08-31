@@ -20,8 +20,15 @@
                 </a>
                 {% endif %}
                 {% if site.author.email %}
-                <a href="mailto:{{ site.author.email }}" aria-label="Email">
+                <a href="mailto:{{ site.author.email }}" aria-label="Email" data-track="email"
+                    data-track-location="footer">
                     <i class="fas fa-envelope"></i>
+                </a>
+                {% endif %}
+                {% if site.author.resume %}
+                <a href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener"
+                    aria-label="Resume" data-track="resume" data-track-location="footer">
+                    <i class="fas fa-file-lines"></i>
                 </a>
                 {% endif %}
             </div>
